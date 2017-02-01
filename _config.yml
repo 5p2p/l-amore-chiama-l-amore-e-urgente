@@ -1,0 +1,77 @@
+# ---------------------------------------------------------
+# Blog infos
+# ---------------------------------------------------------
+url: http://5p2p.it/l-amore-chiama-l-amore-e-urgente/
+name: "5pani2pesci"
+subname: "Avventure di Provvidenza Quotidiana"
+description: "L'amore chiama, l'amore è urgente - Fraterna Domus Sacrofano Roma - 25-27 Novembre 2016"
+metadata: [matrimonio, cristiano, amore, coppia, corso, vita]
+about: "5pani2pesci è un progetto per conoscere l'Amore vero, quello che ti cambia la vita. Il nostro augurio e la nostra missione è accompagnarti in questo cammino per aiutarti ad approfondire un incontro autentico col Signore e portare pienamente frutto nella tua vita."
+blog: http://5p2p.it
+language: it
+splash: /images/splash/locandina-corso-quadrata-web.png
+
+social: 
+  facebook: https://www.facebook.com/5pani2pesci
+  twitter: https://twitter.com/5pani2pesci
+  youtube: https://www.youtube.com/user/5pani2pesci
+  # - instagram:
+
+baseurl: /l-amore-chiama-l-amore-e-urgente
+
+# ---------------------------------------------------------
+# Blog basic design
+# ---------------------------------------------------------
+logo:    /images/logo/logo-5p2p-256.png
+favicon: /images/logo/logo-5p2p-64.png
+fb_img:  /images/splash/locandina-corso-orizzontale-1200.jpg
+
+# ---------------------------------------------------------
+# Menus
+# ---------------------------------------------------------
+button:
+
+  title: "Iscriviti!"
+  url: "/"
+  class: 
+
+# ---------------------------------------------------------
+footer_menu:
+
+  - title: "Blog"
+    href: "http://5p2p.it"
+
+  - title: "Chi Siamo"
+    href: "http://5p2p.it/chi_siamo.html"
+
+  - title: "Scrivici"
+    href: "http://5p2p.it/scrivici.html"
+
+  - title: "Facebook"
+    href: "https://www.facebook.com/5pani2pesci"
+
+# ---------------------------------------------------------
+# Accounts
+# ---------------------------------------------------------
+ga_analytics: UA-39520577-1
+
+# ---------------------------------------------------------
+# Jekyll stuff
+# ---------------------------------------------------------
+assets: assets/
+images: images/posts
+previews: previews
+permalink: /:categories/:title/
+# permalink: pretty
+markdown: kramdown
+timezone: Europe/Rome
+future: false
+sass:
+  # style: compressed
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "post"
+      author: "guest"

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+
+  <!-- for Facebook -->
+  <meta property="og:title" content="{{page.title}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{site.url}}" />
+  <meta property="og:description" content="{{site.description}}" />
+  <meta property="og:image" content="{{site.url}}{{site.fb_img}}">
+
+  <title>{{page.title}}</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{site.baseurl}}{{site.logo}}">
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/reset.css" media="all">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/basscss.min.css" media="all">
+  <!-- <link rel="stylesheet" href="/assets/css/basscss.btn.css" media="all"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/ace.min.css" media="all"> -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/colors.css" media="all">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" media="all">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,400italic,700|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+ <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,700" rel="stylesheet">
+  <!-- awesome icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  {% include facebook.html %}
+  {% include ga_analytics.html %}
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+      <span><a data-scroll href="#che-cosa">Cos'è?</a></span>
+      <span><a data-scroll href="#a-chi">A chi è rivolto?</a></span>
+      <span><a data-scroll href="#come">Come arrivare?</a></span>
+      <span><a data-scroll href="#costi">I costi</a></span>
+      <span><a data-scroll href="#anchor">Iscriviti</a></span>
+    </nav>
+
+    <img class="negative-space-big-screen" alt="L'amore chiama, l'amore è urgente, Roma" src="{{site.baseurl}}{{site.splash}}" />
+
+    <a data-scroll href="#anchor"><span class="btn">Iscriviti</span></a>
+
+  </header>
+
+  <!-- <div id="content" class="max-width-3 mx-auto"> -->
+  <div id="content" class="">
+    {{content}}
+  </div>
+
+  <footer class="">
+    <div class="max-width-3 mx-auto">{% include footer.html %}</div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="{{ site.baseurl }}/assets/js/smooth-scroll.min.js"></script>
+  <script>
+  smoothScroll.init({
+    speed: 500,
+    easing: 'easeOutQuad'
+});
+  </script>
+
+  
+  </body>
+</html>

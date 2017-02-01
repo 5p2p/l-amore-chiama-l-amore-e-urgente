@@ -1,0 +1,94 @@
+<form class="sm-col-6">
+
+  <label>Nome e Cognome</label>
+  <input type="text" class="block col-12 mb1 field" name="name" required>
+
+  <label>Email</label>
+  <input type="email" class="block col-12 mb1 field" name="email" required>
+
+  <label>Cellulare</label>
+  <input type="text" class="block col-12 mb1 field" name="mobile" required>
+
+  <label>Età</label>
+  <input type="text" class="block col-12 mb1 field" name="age" required>
+
+  <label>Città</label>
+  <input type="text" class="block col-12 mb1 field" name="city" required>
+
+  <div id="alert" class="hidden">
+    <p>Attenzione! Tutti i campi sono obbligatori</p>
+  </div>
+
+  <input type="submit" class="btn btn-10-wide" value="Invia i tuoi dati">
+
+</form>
+
+
+
+
+<div id="success" class="hidden">
+  <h3>Ottimo! Ma non hai ancora finito... </h3>
+  <p>I tuoi dati sono arrivati con successo. Ora per finalizzare
+  la tua iscrizione, manda un <b>bonifico</b> con la caparra come
+  spiegato qui sopra. Appena avremo ricevuto la transazione ti
+  manderemo una email di conferma. A presto!
+  </p>
+</div>
+
+
+
+<script>
+    var divAlert = document.getElementById('alert');
+    var divSuccess = document.getElementById('success');
+    var contactForm = document.querySelector('form'),
+    inputName   = contactForm.querySelector('[name="name"]'),
+    inputEmail  = contactForm.querySelector('[name="email"]'),
+    inputMobile = contactForm.querySelector('[name="mobile"]'),
+    inputAge    = contactForm.querySelector('[name="age"]'),
+    inputCity   = contactForm.querySelector('[name="city"]'),
+    sendButton  = contactForm.querySelector('[type="submit"]');
+    // sendButton = contactForm.querySelector('button');
+
+    sendButton.addEventListener('click', function(event){
+
+      if ( 
+        inputName.value   == null || inputName.value == "" || 
+        inputEmail.value  == null || inputEmail.value == "" || 
+        inputMobile.value == null || inputMobile.value == "" || 
+        inputAge.value    == null || inputAge.value == "" || 
+        inputCity.value   == null || inputCity.value == "" ) {
+          divAlert.style.display = 'block';
+      }
+      else {
+
+        event.preventDefault(); // prevent the form to do the post.
+
+        // sendButton.innerHTML = 'inviando...';
+        sendButton.value = 'Sto inviando...';
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '//formspree.io/info@5p2p.it', true);
+        xhr.setRequestHeader("Accept", "application/json")
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+        xhr.send(
+          "Nome=" + inputName.value +
+          "&Email=" + inputEmail.value +
+          "&Cellulare=" + inputMobile.value +
+          "&Età=" + inputAge.value +
+          "&Città=" + inputCity.value);
+
+        xhr.onloadend = function (res) {
+          if (res.target.status === 200){
+            // sendButton.innerHTML = 'Message sent!';
+            // document.getElementById(text).style.display = 'none';
+            contactForm.style.display = 'none';
+            divSuccess.style.display = 'block';
+          }
+          else {
+            sendButton.value = "C'è stato un errore! Riprova";
+          }
+        }
+      }
+    });
+</script>
