@@ -83,7 +83,7 @@ La maggior parte delle persone provengono dalle parti più diverse di Italia, qu
 <div class="important message" markdown="1">
 ### <i class="fa fa-map-marker padding-1-right" aria-hidden="true"></i> Per passaggi in auto
 
-Per *dare* o *ricevere* un passaggio in auto iscriviti alla pagina **[Passaggi 5p2p!](https://www.facebook.com/groups/1336150603061945)**
+Per *dare* o *ricevere* un passaggio in auto iscriviti alla pagina **[Passaggi 5p2p!](https://www.facebook.com/groups/335153533552443/)**
 </div>
 
 
