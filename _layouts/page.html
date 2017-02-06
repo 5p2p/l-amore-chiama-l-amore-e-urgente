@@ -10,7 +10,11 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{site.url}}" />
   <meta property="og:description" content="{{site.description}}" />
-  <meta property="og:image" content="{{site.url}}{{site.fb_img}}">
+  {% if page.facebook_image %}
+    <meta property="og:image" content="{{site.url}}{{page.facebook_image}}">
+  {% else %}
+    <meta property="og:image" content="{{site.url}}{{page.image}}">
+  {% endif %}
 
   <title>{{page.title}}</title>
 
@@ -42,12 +46,13 @@
     <nav>
       <span><a data-scroll href="#che-cosa">Cos'è?</a></span>
       <span><a data-scroll href="#a-chi">A chi è rivolto?</a></span>
-      <span><a data-scroll href="#come">Come arrivare?</a></span>
+      <span><a data-scroll href="#testimonial">Testimonial</a></span>
       <span><a data-scroll href="#costi">I costi</a></span>
+      <span><a data-scroll href="#come">Come arrivare?</a></span>
       <span><a data-scroll href="#anchor">Iscriviti</a></span>
     </nav>
 
-    <img class="negative-space-big-screen" alt="L'amore chiama, l'amore è urgente, Roma" src="{{site.baseurl}}{{site.splash}}" />
+    <img class="negative-space-big-screen" alt="{{page.title}} {{page.location}}" src="{{site.baseurl}}{{page.image}}" />
 
     <a data-scroll href="#anchor"><span class="btn">Iscriviti</span></a>
 
@@ -72,6 +77,6 @@
 });
   </script>
 
-  
+
   </body>
 </html>

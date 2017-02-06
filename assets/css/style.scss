@@ -73,7 +73,8 @@ h2 {
   padding: 2rem 0 1rem 0;
 }
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
   padding: 1rem 0 0.5rem 0;
 }
 
@@ -198,7 +199,7 @@ input, select, textarea{
   width: 70%;
   border-radius: 4px;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px; 
+  -moz-border-radius: 4px;
 }
 
 nav {display: none;}
@@ -231,6 +232,37 @@ nav {display: none;}
   }
 }
 
+// -----------------------------------------------------------
+blockquote {
+  p { padding-bottom: 1rem; }
+  p:nth-child(odd) {
+    text-align: right;
+    font-style: italic;
+  }
+  p:nth-child(even) {
+    text-align: left;
+    font-style: normal;
+  }
+  cite {
+    font-style: normal;
+  }
+  cite::before {
+    content: "\2014";
+  }
+}
+
+.important.message {
+  // background-color: #ecf0f1;
+  padding: 0.0rem 2rem;
+  border-radius: 20px;
+  border: 8px solid #ecf0f1;
+}
+// .center {
+//   display: block;
+//   background-color: green;
+//   // text-align: center;
+//   // margin: 0 auto;
+// }
 // -----------------------------------------------------------
 
 @media all and (min-width: $bigger_break) {

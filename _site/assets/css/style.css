@@ -42,7 +42,8 @@ h2 {
   padding: 2rem 0 1rem 0; }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
   padding: 1rem 0 0.5rem 0; }
 
 h4 {
@@ -179,6 +180,24 @@ nav {
     font-size: 1rem;
     padding-bottom: 0.4rem;
     color: #FF4136; }
+
+blockquote p {
+  padding-bottom: 1rem; }
+blockquote p:nth-child(odd) {
+  text-align: right;
+  font-style: italic; }
+blockquote p:nth-child(even) {
+  text-align: left;
+  font-style: normal; }
+blockquote cite {
+  font-style: normal; }
+blockquote cite::before {
+  content: "\2014"; }
+
+.important.message {
+  padding: 0.0rem 2rem;
+  border-radius: 20px;
+  border: 8px solid #ecf0f1; }
 
 @media all and (min-width: 600px) {
   .negative-space-big-screen {

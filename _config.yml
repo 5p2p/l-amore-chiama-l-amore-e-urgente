@@ -9,9 +9,9 @@ metadata: [matrimonio, cristiano, amore, coppia, corso, vita]
 about: "5pani2pesci è un progetto per conoscere l'Amore vero, quello che ti cambia la vita. Il nostro augurio e la nostra missione è accompagnarti in questo cammino per aiutarti ad approfondire un incontro autentico col Signore e portare pienamente frutto nella tua vita."
 blog: http://5p2p.it
 language: it
-splash: /images/splash/locandina-corso-quadrata-web.png
+# splash: /images/splash/locandina-corso-quadrata-web.png
 
-social: 
+social:
   facebook: https://www.facebook.com/5pani2pesci
   twitter: https://twitter.com/5pani2pesci
   youtube: https://www.youtube.com/user/5pani2pesci
@@ -33,7 +33,7 @@ button:
 
   title: "Iscriviti!"
   url: "/"
-  class: 
+  class:
 
 # ---------------------------------------------------------
 footer_menu:
