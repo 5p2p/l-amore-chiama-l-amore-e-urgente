@@ -119,3 +119,7 @@ Per iscrizioni: &nbsp; &nbsp; **3389982954** &nbsp;<br>
 
 </div>
 </div>
+
+<div class="center small-text" style="padding-top: 4rem;">
+In collaborazione con la pastorale giovanile dell’Arcidiocesi di Sorrento Castellammare di Stabia e Nuova Evangelizzazione Ekippà
+</div>
