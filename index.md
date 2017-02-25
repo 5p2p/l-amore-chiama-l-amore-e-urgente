@@ -4,7 +4,7 @@ location: Meta di Sorrento, 17-19 Marzo 2017
 image: /images/splash/locandina-corso-quadrata.png
 facebook_image: /images/splash/locandina-corso-orizzontale-facebook.png
 # youtube: https://www.youtube.com/embed/SeBKQfUwoIw
-youtube: https://youtu.be/M92ctSwuV4o
+youtube: https://www.youtube.com/embed/M92ctSwuV4o
 layout: page
 ---
 
