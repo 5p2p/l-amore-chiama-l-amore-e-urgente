@@ -15,6 +15,8 @@ layout: page
 
 Vuoi toccare in maniera forte e consistente che cos'è l’amore? Vuoi fare centro nella vita? **Ti servono gli strumenti!** *"L'amore chiama, l'amore è urgente"* è un’esperienza di tre giorni (da venerdì dopo pranzo a domenica a pranzo) organizzato da [5pani2pesci](http://5p2p.it) per equipaggiarti di tutto l'occorrente.
 
+Per saperne di più, guarda il video!
+
 {% include youtube.html %}
 
 </div>
