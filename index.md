@@ -92,7 +92,7 @@ Per *dare* o *ricevere* un passaggio in auto iscriviti alla pagina **[Passaggi 5
 
 ### <i class="fa fa-car padding-1-right" aria-hidden="true"></i> In auto
 
-Da Napoli o Salerno raggiungere Pompei. Proseguendo sulla superstrada uscire a Castellammare di Stabia-Sorrento, poi proseguire per Sorrento lungo la via costiera evitando la galleria. Arrivati a Vico Equense, seguire le indicazioni per Monte Faito / casa Armida Barelli.
+Da Napoli o Salerno raggiungere Pompei. Proseguendo sulla superstrada uscire a Castellammare di Stabia-Sorrento, poi proseguire per Sorrento lungo la via costiera. Arrivati nei pressi di Vico Equense, prendere la galleria e seguire per Seano e da lì ad Alberi / casa Armida Barelli.
 
 [Apri Google Maps](https://www.google.it/maps/place/Casa+Di+Spiritualita'+Armida+Barelli/@40.6378053,14.4149224,13.47z/data=!4m5!3m4!1s0x133b99012d6b0285:0x79254728b44c664d!8m2!3d40.6470276!4d14.4222407?hl=en)
 
