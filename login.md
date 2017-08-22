@@ -4,7 +4,7 @@ permalink: login
 #private: true
 ---
 
-<div class="login">
+<div class="form">
 
 <input id="email"    type="text"     name="email"    placeholder="Email"   />
 <input id="password" type="password" name="password" placeholder="Password"/>

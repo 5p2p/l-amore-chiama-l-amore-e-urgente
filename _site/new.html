@@ -32,7 +32,7 @@
 
   <div id="content">
     <div class="page-content">
-      <div class="login">
+      <div class="form">
 
 <input id="email" type="text" name="email" placeholder="Email" />
 <input id="password" type="password" name="password" placeholder="Password" />
@@ -70,6 +70,10 @@
     messagingSenderId: "423190157517"
   };
   firebase.initializeApp(config);
+  // var refRegistration = '/events/2017-11-paderno/people'
+  // var refUnique       = '/events/2017-11-paderno/unique'
+  var refEvent = '/events/2017-11-paderno'
+
 </script>
 
 <script type="text/javascript">
@@ -151,6 +155,70 @@ function newUser() {
   document.getElementById('newAccount').addEventListener('click', createNewUser, false)
 }
 
+function registerUser(user,ref) {
+  // formAlert(name+" risulta essere già registrato")
+  //
+  var name = user.name
+  var refUnique = firebase.database().ref(ref+'/unique')
+  var refPeople = firebase.database().ref(ref+'/people')
+  refUnique.orderByChild("name").equalTo(name).once('value', function(snapshot) {
+    if (snapshot.val() === null) {
+      // console.log('name is unique');
+      refUnique.push({name: user.name})
+      refPeople.push(user, function (error) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('data saved correctly')
+          location.href = 'completed'
+        }
+      })
+    } else {
+      // console.log('name failed!');
+      formAlert(name+" risulta essere già registrato")
+    }
+  })
+}
+
+
+function registration() {
+  var alert = {show: false}
+  document.getElementById('y-intollerances').addEventListener('click', function(){
+    document.getElementById('y-radio').checked = true;
+    document.getElementById('intolerance').disabled = false;
+  }, false)
+  document.getElementById('n-intollerances').addEventListener('click', function(){
+    document.getElementById('n-radio').checked = true;
+    document.getElementById('intolerance').disabled = true;
+  }, false)
+
+  document.getElementById('registration').addEventListener('click', function () {
+    document.getElementById('registration').innerText = '...'
+    setTimeout(function(){document.getElementById('registration').innerText = 'Invia'}, 1000)
+    var name = capitalize(document.getElementById('name').value.trim())
+    var email = document.getElementById('email').value.trim().toLowerCase()
+    var city = capitalize(document.getElementById('city').value.trim())
+    var mobile = document.getElementById('mobile').value.trim()
+    var age = document.getElementById('age').value.trim()
+    var intolerance = capitalize(document.getElementById('intolerance').value.trim())
+    var user = {
+      name: name,
+      email: email,
+      city: city,
+      mobile: mobile,
+      age: age,
+      intolerance: intolerance
+    }
+    if (anyEmpty([name,email,city,mobile,age])) {
+      formAlert('Tutti i campi sono obbligatori')
+    } else if(!emailValidate(email)) {
+      formAlert("L'email inserita non è corretta")
+    } else {
+      registerUser(user,refEvent)
+    }
+  }, false)
+}
+
 function dashPage(user) {
   document.getElementById('logout').addEventListener('click', toggleSignIn, false)
   if (user) {
@@ -176,6 +244,10 @@ window.onload = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (/login/.test(location.href)) {
       loginPage(user)
+    } else if (/registration/.test(location.href)) {
+      registration()
+    } else if (/completed/.test(location.href)) {
+      
     } else if (/new/.test(location.href)) {
       newUser()
     } else {
@@ -184,6 +256,9 @@ window.onload = function() {
   })
 }
 </script>
+
+<!-- utilities -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/utils.js"></script>
 
 <!-- templates -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/templates.js"></script>
