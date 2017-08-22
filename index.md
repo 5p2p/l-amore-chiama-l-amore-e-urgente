@@ -5,7 +5,7 @@ image: /images/splash/locandina-corso-quadrata.png
 facebook_image: /images/splash/locandina-corso-orizzontale-facebook.png
 # youtube: https://www.youtube.com/embed/SeBKQfUwoIw
 youtube: https://www.youtube.com/embed/M92ctSwuV4o
-layout: page
+layout: landing
 ---
 
 <div id="che-cosa" class="light-section">

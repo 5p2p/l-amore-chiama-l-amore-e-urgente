@@ -1,0 +1,40 @@
+---
+title: Dashboard
+permalink: test
+private: true
+---
+
+{% for person in site.data.people %}
+  {% for info in person %}
+    {% if info.name %}
+
+      <div class="entry">
+        <div class="entry-title">
+          {{info.name}}
+          <div class="edit-action">
+            <i class="fa fa-align-right"></i>
+          </div>
+        </div>
+        <div class="entry-details">
+          <div class="text-inline-block">{{info.age}} anni,</div>
+          <div class="text-inline-block">da {{info.city}}</div>
+        </div>
+        <div class="entry-details">
+          <div class="text-inline-block">{{info.mobile}}</div>,
+          <!-- <div class="text-inline-block text-very-small"><i class="fa fa-circle space-tab"></i></div> -->
+          <div class="text-inline-block">{{info.email}}</div>
+        </div>
+        {% if info.intolerance != 'No' and info.intolerance != 'no' and info.intolerance != 'NO' and info.intolerance != '' %}
+        <div class="entry-details">
+          <div class="text-inline-block"><i class="fa fa-bolt"></i> {{info.intolerance}}</div>
+        </div>
+        {% endif %}
+      </div>
+
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<button id="logout" name="logout">Logout</button>
+# List of people
+<div id='people'></div>

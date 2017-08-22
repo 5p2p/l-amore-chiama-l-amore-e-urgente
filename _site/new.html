@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+  <title>Create new user</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/l-amore-chiama-l-amore-e-urgente/images/logo/logo-5p2p-256.png">
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="/l-amore-chiama-l-amore-e-urgente/assets/css/reset.css" media="all">
+  <link rel="stylesheet" href="/l-amore-chiama-l-amore-e-urgente/assets/css/basscss.min.css" media="all">
+  <link rel="stylesheet" href="/l-amore-chiama-l-amore-e-urgente/assets/css/colors.css" media="all">
+  <link rel="stylesheet" href="/l-amore-chiama-l-amore-e-urgente/assets/css/style.css" media="all">
+  <!-- <link rel="stylesheet" href="/l-amore-chiama-l-amore-e-urgente/assets/css/dashboard.css" media="all"> -->
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,400italic,700|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,700" rel="stylesheet">
+  <!-- awesome icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <header>
+
+
+  </header>
+
+  <div id="content">
+    <div class="page-content">
+      <div class="login">
+
+<input id="email" type="text" name="email" placeholder="Email" />
+<input id="password" type="password" name="password" placeholder="Password" />
+<input id="passwordCheck" type="password" name="passwordCheck" placeholder="Retype password" />
+
+<button class="input-btn" id="newAccount" name="newAccount">New</button>
+
+</div>
+
+    </div>
+  </div>
+
+  <footer class="">
+    <div class="max-width-3 mx-auto"><p>&nbsp;</p></div>
+  </footer>
+
+
+  <!--  Scripts-->
+  
+<!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script> -->
+<!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-storage.js"></script> -->
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDrv83fRdbIbRC5yYxBJKhCHACP-ld4UFI",
+    authDomain: "app-5pani2pesci.firebaseapp.com",
+    databaseURL: "https://app-5pani2pesci.firebaseio.com",
+    projectId: "app-5pani2pesci",
+    storageBucket: "app-5pani2pesci.appspot.com",
+    messagingSenderId: "423190157517"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+// Set page privacy via yaml page key
+
+var private = false
+
+</script>
+
+<script type="text/javascript">
+
+function toggleSignIn() {
+  if (firebase.auth().currentUser) {
+    firebase.auth().signOut()
+   } else {
+     var email = document.getElementById('email').value
+     var password = document.getElementById('password').value
+     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+       if (error.code === 'auth/wrong-password') {
+         alert('Wrong password.')
+       } else {
+         alert(error.message)
+       }
+       console.log(error)
+     })
+     document.getElementById('email').value    = ""
+     document.getElementById('password').value = ""
+   }
+ }
+
+function createNewUser() {
+  var email    = document.getElementById('email').value
+  var password = document.getElementById('password').value
+  var passwordCheck = document.getElementById('passwordCheck').value
+  if (password === passwordCheck && password !== '') {
+    // console.log(email)
+    // console.log(password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log(user.email)
+      location.href = 'dashboard'
+    })
+    .catch((error) => {
+      console.log(error)
+      var errorCode = error.code
+      var errorMessage = error.message
+    })
+  } else {
+   console.log('the two passwords are different!')
+  }
+}
+
+
+function loginPage(user) {
+  // firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // var displayName = user.displayName;
+    var email = user.email;
+    var uid = user.uid;
+    document.getElementById('signin').textContent = 'Sign out'
+    if (/login/.test(location.href)) location.href='dashboard'
+
+  } else {
+    console.log('Not logged')
+    document.getElementById('signin').textContent = 'Sign in'
+    // if (private) location.href = 'login'
+  }
+  // })
+  document.getElementById('signin').addEventListener('click', toggleSignIn, false);
+  document.getElementById('email').onkeydown = function(e){
+     if(e.keyCode == 13) toggleSignIn()
+  }
+  document.getElementById('password').onkeydown = function(e){
+     if(e.keyCode == 13) toggleSignIn()
+  }
+}
+
+function newUser() {
+  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
+}
+
+function dashPage(user) {
+  document.getElementById('logout').addEventListener('click', toggleSignIn, false)
+  if (user) {
+    // firebase.initializeApp(config)
+    var db = firebase.database()
+    // var dbRef = db.ref('/events/2017-02-sorrento/users')
+    var dbRef = db.ref('/events/2017-11-paderno/people')
+    // var people = document.getElementById('people')
+
+    dbRef.on('child_added', (data) => {
+      var div = document.createElement('div')
+      div.id = data.key
+      div.innerHTML = template.eventPeople(data.val())
+      people.appendChild(div)
+    })
+
+  } else {
+    if (private) location.href = 'login'
+  }
+}
+
+window.onload = function() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (/login/.test(location.href)) {
+      loginPage(user)
+    } else if (/new/.test(location.href)) {
+      newUser()
+    } else {
+      dashPage(user)
+    }
+  })
+}
+</script>
+
+<!-- templates -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/templates.js"></script>
+
+
+  </body>
+</html>
