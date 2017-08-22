@@ -116,7 +116,8 @@ input.alert::-webkit-input-placeholder {
    color: red;
 }
 
-input[type="text"] {
+// input[type="text"] {
+input {
   color: $color-midnight;
 }
 
@@ -125,7 +126,8 @@ input[type="text"]:disabled {
   // background: white;
 }
 
-input[type="text"]::placeholder {
+// input[type="text"]::placeholder {
+input::placeholder {
   color: $color-silver;
 }
 

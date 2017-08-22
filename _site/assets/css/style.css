@@ -301,13 +301,13 @@ input.small {
 input.alert::-webkit-input-placeholder {
   color: red; }
 
-input[type="text"] {
+input {
   color: #2c3e50; }
 
 input[type="text"]:disabled {
   background: #ecf0f1; }
 
-input[type="text"]::placeholder {
+input::placeholder {
   color: #bdc3c7; }
 
 input[type="text"]:disabled::placeholder {

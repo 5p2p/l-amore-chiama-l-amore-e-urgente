@@ -86,9 +86,12 @@ var private = false
 <script type="text/javascript">
 
 function toggleSignIn() {
+  var defaultBtnText = document.getElementById('signin').innerText
+  document.getElementById('signin').innerText = '...'
   if (firebase.auth().currentUser) {
     firebase.auth().signOut()
    } else {
+     setTimeout(function(){document.getElementById('signin').innerText = defaultBtnText}, 1000)
      var email = document.getElementById('email').value
      var password = document.getElementById('password').value
      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -99,8 +102,8 @@ function toggleSignIn() {
        }
        console.log(error)
      })
-     document.getElementById('email').value    = ""
-     document.getElementById('password').value = ""
+    //  document.getElementById('email').value    = ""
+    //  document.getElementById('password').value = ""
    }
  }
 
@@ -247,7 +250,7 @@ window.onload = function() {
     } else if (/registration/.test(location.href)) {
       registration()
     } else if (/completed/.test(location.href)) {
-      
+
     } else if (/new/.test(location.href)) {
       newUser()
     } else {
