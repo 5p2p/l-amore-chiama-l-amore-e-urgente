@@ -295,8 +295,9 @@ input.small {
   transform: translateY(1px); }
 
 #alert {
+  text-align: left;
   color: #e74c3c;
-  margin-bottom: 1rem; }
+  margin-top: 1rem; }
 
 input.alert::-webkit-input-placeholder {
   color: red; }

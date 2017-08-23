@@ -109,8 +109,9 @@ input.small {
 }
 
 #alert {
+  text-align: left;
   color: $color-alert;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 input.alert::-webkit-input-placeholder {
    color: red;

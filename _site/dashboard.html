@@ -33,7 +33,7 @@
   <div id="content">
     <div class="page-content">
       <p><button id="logout" name="logout">Logout</button></p>
-<h1 id="list-of-people">List of people</h1>
+
 <div id="people"></div>
 <div class="separator"></div>
 
@@ -80,13 +80,18 @@ var private = true
 
 <script type="text/javascript">
 
+function signOut() {
+  firebase.auth().signOut()
+}
+
 function toggleSignIn() {
-  var defaultBtnText = document.getElementById('signin').innerText
-  document.getElementById('signin').innerText = '...'
+  var id = 'signin'
+  var defaultBtnText = document.getElementById(id).innerText
+  document.getElementById(id).innerText = '...'
   if (firebase.auth().currentUser) {
     firebase.auth().signOut()
    } else {
-     setTimeout(function(){document.getElementById('signin').innerText = defaultBtnText}, 1000)
+     setTimeout(function(){document.getElementById(id).innerText = defaultBtnText}, 1000)
      var email = document.getElementById('email').value
      var password = document.getElementById('password').value
      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -97,8 +102,6 @@ function toggleSignIn() {
        }
        console.log(error)
      })
-    //  document.getElementById('email').value    = ""
-    //  document.getElementById('password').value = ""
    }
  }
 
@@ -218,7 +221,7 @@ function registration() {
 }
 
 function dashPage(user) {
-  document.getElementById('logout').addEventListener('click', toggleSignIn, false)
+  document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
     // firebase.initializeApp(config)
     var db = firebase.database()

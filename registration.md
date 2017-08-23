@@ -7,8 +7,6 @@ permalink: registration
 
 <div class="form">
 
-<div id="alert"></div>
-
 <input id="name"   type="text"    name="name"    placeholder="Nome e Cognome"/>
 <input id="email"  type="text"    name="email"    placeholder="Email"/>
 <input id="city"   type="text"    name="city"    placeholder="Da dove vieni?"/>
@@ -44,5 +42,7 @@ permalink: registration
 
 
 <button class="input-btn" id="registration" name="registration">Iscriviti</button>
+
+<div id="alert"></div>
 
 </div>

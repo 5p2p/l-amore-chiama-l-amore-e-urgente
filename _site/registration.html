@@ -34,8 +34,6 @@
     <div class="page-content">
       <div class="form">
 
-<div id="alert"></div>
-
 <input id="name" type="text" name="name" placeholder="Nome e Cognome" />
 <input id="email" type="text" name="email" placeholder="Email" />
 <input id="city" type="text" name="city" placeholder="Da dove vieni?" />
@@ -71,6 +69,8 @@
 
 
 <button class="input-btn" id="registration" name="registration">Iscriviti</button>
+
+<div id="alert"></div>
 
 </div>
 
@@ -117,13 +117,18 @@ var private = false
 
 <script type="text/javascript">
 
+function signOut() {
+  firebase.auth().signOut()
+}
+
 function toggleSignIn() {
-  var defaultBtnText = document.getElementById('signin').innerText
-  document.getElementById('signin').innerText = '...'
+  var id = 'signin'
+  var defaultBtnText = document.getElementById(id).innerText
+  document.getElementById(id).innerText = '...'
   if (firebase.auth().currentUser) {
     firebase.auth().signOut()
    } else {
-     setTimeout(function(){document.getElementById('signin').innerText = defaultBtnText}, 1000)
+     setTimeout(function(){document.getElementById(id).innerText = defaultBtnText}, 1000)
      var email = document.getElementById('email').value
      var password = document.getElementById('password').value
      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -134,8 +139,6 @@ function toggleSignIn() {
        }
        console.log(error)
      })
-    //  document.getElementById('email').value    = ""
-    //  document.getElementById('password').value = ""
    }
  }
 
@@ -255,7 +258,7 @@ function registration() {
 }
 
 function dashPage(user) {
-  document.getElementById('logout').addEventListener('click', toggleSignIn, false)
+  document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
     // firebase.initializeApp(config)
     var db = firebase.database()
