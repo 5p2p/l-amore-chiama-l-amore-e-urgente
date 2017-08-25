@@ -6,13 +6,13 @@ var template = {
       <div class='message'>${data.email}</div>
     `
   },
-  eventPeople: function (info) {
+  eventPeople: function (info,key) {
     var html =  `
     <div class="entry">
       <div class="separator"></div>
       <div class="entry-title">
         ${info.name}
-        <div class="edit-action">
+        <div id="${key}" class="edit-action">
           <i class="fa fa-align-right"></i>
         </div>
       </div>

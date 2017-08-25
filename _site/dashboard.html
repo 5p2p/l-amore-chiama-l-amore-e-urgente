@@ -25,16 +25,75 @@
 
 <body>
 
-  <header>
-
-
+  <header class="top main">
+    <img class="top" src="/l-amore-chiama-l-amore-e-urgente/images/logo/5pani2pesci-2017-white-text-200.png" alt="5pani2pesci">
+    <div id="logout" class="top">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <!-- <button id="logout" name="logout">Logout</button> -->
+    </div>
   </header>
+
 
   <div id="content">
     <div class="page-content">
-      <p><button id="logout" name="logout">Logout</button></p>
+      <!-- <button id="logout" name="logout">Logout</button> -->
 
+<!--  MODAL DIALOG -->
+<div id="editUser" class="dialog">
+  <div class="dialog content">
+
+    <div class="form">
+      <input id="name" type="text" name="name" placeholder="Nome e Cognome" />
+      <input id="email" type="text" name="email" placeholder="Email" />
+      <input id="city" type="text" name="city" placeholder="Da dove vieni?" />
+      <input id="mobile" type="text" name="mobile" placeholder="Cellulare" class="medium input" />
+      <input id="age" type="text" name="age" placeholder="Età (anni)" class="small input" />
+      <input id="intolerance" type="text" name="intolerance" placeholder="Intolleranze" />
+
+    <ul class="radio">
+    <!-- <p class="small text">Hai intolleranze alimentari?</p> -->
+     <li id="user">
+       <input id="user-radio" type="radio" name="selector" checked="" />
+       <label for="f-option">Partecipante</label>
+       <div class="check"></div>
+       <!-- <input  id="intolerance"     type="text"  name="intolerance"    placeholder="Quali?"   disabled/> -->
+     </li>
+     <li id="member">
+       <input id="member-radio" type="radio" name="selector" />
+       <label for="s-option">Servizio</label>
+       <div class="check"></div>
+       <!-- <div class="check"><div class="inside"></div></div> -->
+     </li>
+     <li id="staff">
+       <input id="staff-radio" type="radio" name="selector" />
+       <label for="s-option">Staff</label>
+       <div class="check"></div>
+       <!-- <div class="check"><div class="inside"></div></div> -->
+     </li>
+    </ul>
+    <div class="" style="text-align: right">
+      <button id="update" class="input-btn" name="update">Update</button>
+      <button id="close" class="input-btn white" name="cancel">Close</button>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+  <div class="form">
+    <input id="name" type="text" name="name" placeholder="type DELETE to remove user" />
+    <div class="" style="text-align: right">
+      <button id="delete" class="input-btn white color-alert" name="delete">Delete</button>
+    </div>
+  </div>
+
+    <!-- <div class="centered box"> -->
+    <!-- </div> -->
+
+  </div>
+</div>
+
+<!--  FIREBASE LIST -->
 <div id="people"></div>
+
 <div class="separator"></div>
 
     </div>
@@ -183,6 +242,7 @@ function registerUser(user,ref) {
 
 
 function registration() {
+  document.getElementById('logout').style.visibility = "hidden";
   var alert = {show: false}
   document.getElementById('y-intollerances').addEventListener('click', function(){
     document.getElementById('y-radio').checked = true;
@@ -223,18 +283,25 @@ function registration() {
 function dashPage(user) {
   document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
+
+    document.getElementById('dialog')
     // firebase.initializeApp(config)
     var db = firebase.database()
     // var dbRef = db.ref('/events/2017-02-sorrento/users')
+
     var dbRef = db.ref('/events/2017-11-paderno/people')
     // var people = document.getElementById('people')
 
     dbRef.on('child_added', (data) => {
       var div = document.createElement('div')
-      div.id = data.key
-      div.innerHTML = template.eventPeople(data.val())
+      // div.id = data.key
+      div.innerHTML = template.eventPeople(data.val(),data.key)
+      // console.log(data.key);
       people.appendChild(div)
+      document.getElementById(data.key).addEventListener('click', function (){modifyUser(data.key,data.val())}, false)
     })
+
+
 
   } else {
     if (private) location.href = 'login'
@@ -263,6 +330,9 @@ window.onload = function() {
 
 <!-- templates -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/templates.js"></script>
+
+<!-- dialogs -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/dialogs.js"></script>
 
 
   </body>

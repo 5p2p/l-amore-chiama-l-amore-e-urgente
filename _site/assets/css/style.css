@@ -215,6 +215,55 @@ blockquote cite::before {
     top: 0; }
     nav span {
       padding-left: 2rem; } }
+.color-alert {
+  color: #e74c3c !important; }
+
+.white {
+  background: white !important; }
+
+img.top {
+  width: 200px;
+  height: auto;
+  float: left;
+  padding-left: 2rem; }
+
+#logout.top {
+  padding-right: 2rem;
+  font-size: 2rem;
+  float: right;
+  line-height: 120px; }
+
+header {
+  margin: 0;
+  padding: 0;
+  height: 120px; }
+
+header.main.top {
+  background: #e74c3c;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100; }
+
+.centered.box {
+  margin: 0 auto; }
+
+#editUser {
+  display: none; }
+
+.dialog {
+  position: fixed;
+  top: 20px;
+  left: 0%;
+  width: 100%;
+  z-index: 1000;
+  overflow-y: auto; }
+
+.dialog.content {
+  position: relative;
+  background: white;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 2rem 2rem; }
+
 .page-content {
   max-width: 600px;
   padding: 2rem 2rem;
@@ -272,6 +321,7 @@ input.small {
   font-size: 1rem; }
 
 .input-btn {
+  margin-right: 0.4rem;
   font-size: 1rem;
   width: 5rem;
   padding: 0.6rem;
@@ -293,6 +343,11 @@ input.small {
 
 .input-btn:active {
   transform: translateY(1px); }
+
+.input-btn.white {
+  color: #ecf0f1;
+  background-color: white;
+  border: 2px solid #ecf0f1; }
 
 #alert {
   text-align: left;

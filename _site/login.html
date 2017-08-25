@@ -25,10 +25,14 @@
 
 <body>
 
-  <header>
-
-
+  <header class="top main">
+    <img class="top" src="/l-amore-chiama-l-amore-e-urgente/images/logo/5pani2pesci-2017-white-text-200.png" alt="5pani2pesci">
+    <div id="logout" class="top">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <!-- <button id="logout" name="logout">Logout</button> -->
+    </div>
   </header>
+
 
   <div id="content">
     <div class="page-content">
@@ -188,6 +192,7 @@ function registerUser(user,ref) {
 
 
 function registration() {
+  document.getElementById('logout').style.visibility = "hidden";
   var alert = {show: false}
   document.getElementById('y-intollerances').addEventListener('click', function(){
     document.getElementById('y-radio').checked = true;
@@ -228,18 +233,25 @@ function registration() {
 function dashPage(user) {
   document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
+
+    document.getElementById('dialog')
     // firebase.initializeApp(config)
     var db = firebase.database()
     // var dbRef = db.ref('/events/2017-02-sorrento/users')
+
     var dbRef = db.ref('/events/2017-11-paderno/people')
     // var people = document.getElementById('people')
 
     dbRef.on('child_added', (data) => {
       var div = document.createElement('div')
-      div.id = data.key
-      div.innerHTML = template.eventPeople(data.val())
+      // div.id = data.key
+      div.innerHTML = template.eventPeople(data.val(),data.key)
+      // console.log(data.key);
       people.appendChild(div)
+      document.getElementById(data.key).addEventListener('click', function (){modifyUser(data.key,data.val())}, false)
     })
+
+
 
   } else {
     if (private) location.href = 'login'
@@ -268,6 +280,9 @@ window.onload = function() {
 
 <!-- templates -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/templates.js"></script>
+
+<!-- dialogs -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/dialogs.js"></script>
 
 
   </body>
