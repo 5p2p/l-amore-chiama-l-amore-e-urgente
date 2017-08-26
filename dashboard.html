@@ -1,0 +1,33 @@
+---
+title: Dashboard
+permalink: dashboard
+private: true
+#<!-- {% include dashboard_dialogs.html %} -->
+---
+
+<div id="bcaz" style="color: black;">
+  Modal
+</div>
+<div id="ccaz" style="color: black;">
+  Close
+</div>
+
+<!--  MODAL DIALOG -->
+{% include modal.html %}
+<!--  FIREBASE LIST -->
+<div id='people'></div>
+
+<div class='separator'></div>
+
+
+<script type="text/javascript">
+document.getElementById('bcaz').addEventListener('click', function (){
+  console.log('open');
+  document.getElementById('mcaz').style.display = 'block'
+}, false)
+
+document.getElementById('ccaz').addEventListener('click', function (){
+  console.log('close');
+  document.getElementById('mcaz').style.display = 'none'
+}, false)
+</script>

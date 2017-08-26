@@ -262,28 +262,23 @@ header.main.top {
   left: 0;
   z-index: 1000; }
 
-.dialog {
+.dialogcaz {
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  display: none;
+  max-height: calc(100% - 100px);
   position: fixed;
   top: 50%;
   left: 50%;
+  right: auto;
+  bottom: auto;
   transform: translate(-50%, -50%);
-  height: 800px;
-  width: 80%;
-  max-width: 600px;
-  max-height: 80%;
   z-index: 1001;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-user-drag: auto; }
+  overflow: auto; }
 
-.dialog.content {
-  width: 100%;
-  height: 100%;
-  background: white;
-  padding: 2rem;
-  padding-bottom: 10rem; }
-  .dialog.content h2 {
-    padding-bottom: 2rem; }
+.dialogcaz-content {
+  height: 100%; }
 
 .page-content {
   max-width: 600px;

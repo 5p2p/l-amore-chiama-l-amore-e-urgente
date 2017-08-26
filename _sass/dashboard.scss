@@ -71,50 +71,25 @@ header.main.top {
   z-index: 1000;
 }
 
-.dialog {
-  // max-height: calc(100vh - 100px);
-  // overflow-y: auto;
+.dialogcaz {
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  // display: block;
+  display: none;
+  max-height: calc(100% - 100px);
   position: fixed;
-  // position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  // height: 90%;
-  height: 800px;
-  width: 80%;
-  max-width: 600px;
-  max-height: 80%;
-  // max-height: 1000px;
-  // height: 100%;
-  // height: 1000px;
-  // background: yellow;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
   z-index: 1001;
-  // max-height: 100%;
-  // overflow-y: auto;
-  // overflow-y: scroll;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-user-drag: auto;
+  overflow: auto;
 }
 
-.dialog.content {
-  h2 {
-    padding-bottom: 2rem;
-  }
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  width: 100%;
+.dialogcaz-content {
   height: 100%;
-  background: white;
-  // // max-width: $max-width/2;
-  // // margin: 0 auto;
-  padding: 2rem;
-  padding-bottom: 10rem;
-  // margin: 0 2rem;
-  // overflow: auto;
-  // overflow-y: auto;
-  // -webkit-overflow-scrolling: touch;
 }
 
 .page-content {
