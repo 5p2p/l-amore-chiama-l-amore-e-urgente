@@ -215,6 +215,15 @@ blockquote cite::before {
     top: 0; }
     nav span {
       padding-left: 2rem; } }
+.opacity.page {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+
 .color-alert {
   color: #e74c3c !important; }
 
@@ -257,12 +266,15 @@ header.main.top {
   z-index: 1000;
   overflow-y: auto; }
 
+.dialog.content h2 {
+  padding-bottom: 2rem; }
+
 .dialog.content {
   position: relative;
   background: white;
   max-width: 300px;
   margin: 0 auto;
-  padding: 2rem 2rem; }
+  padding: 0 2rem 2rem 2rem; }
 
 .page-content {
   max-width: 600px;

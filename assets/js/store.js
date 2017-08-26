@@ -1,0 +1,2 @@
+// STORE
+var store = {}

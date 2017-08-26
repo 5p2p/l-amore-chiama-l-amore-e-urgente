@@ -10,6 +10,16 @@ $color-pomegranate: #c0392b; // dark red
 
 $color-alert: $color-alizarin;
 
+.opacity.page {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
 .color-alert {
   color: $color-alert !important;
 }
@@ -69,12 +79,16 @@ header.main.top {
   // overflow-y: scroll;
 }
 
+.dialog.content h2{
+  // color: red;
+  padding-bottom: 2rem;
+}
 .dialog.content {
   position: relative;
   background: white;
   max-width: $max-width/2;
   margin: 0 auto;
-  padding: 2rem 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .page-content {

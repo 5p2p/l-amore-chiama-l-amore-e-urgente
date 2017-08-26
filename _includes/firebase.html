@@ -17,10 +17,10 @@
     messagingSenderId: "423190157517"
   };
   firebase.initializeApp(config);
-  // var refRegistration = '/events/2017-11-paderno/people'
-  // var refUnique       = '/events/2017-11-paderno/unique'
+// CONFIG
   var refEvent = '/events/2017-11-paderno'
-
+  var refUnique = firebase.database().ref(refEvent+'/unique')
+  var refPeople = firebase.database().ref(refEvent+'/people')
 </script>
 
 <script type="text/javascript">
@@ -110,12 +110,12 @@ function newUser() {
   document.getElementById('newAccount').addEventListener('click', createNewUser, false)
 }
 
-function registerUser(user,ref) {
+function registerUser(user) {
   // formAlert(name+" risulta essere già registrato")
   //
   var name = user.name
-  var refUnique = firebase.database().ref(ref+'/unique')
-  var refPeople = firebase.database().ref(ref+'/people')
+  // var refUnique = firebase.database().ref(ref+'/unique')
+  // var refPeople = firebase.database().ref(ref+'/people')
   refUnique.orderByChild("name").equalTo(name).once('value', function(snapshot) {
     if (snapshot.val() === null) {
       // console.log('name is unique');
@@ -170,34 +170,50 @@ function registration() {
     } else if(!emailValidate(email)) {
       formAlert("L'email inserita non è corretta")
     } else {
-      registerUser(user,refEvent)
+      registerUser(user)
     }
   }, false)
 }
 
+// DASHBOARD
 function dashPage(user) {
   document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
 
-    document.getElementById('dialog')
+    // document.getElementById('dialog')
     // firebase.initializeApp(config)
     var db = firebase.database()
     // var dbRef = db.ref('/events/2017-02-sorrento/users')
 
-    var dbRef = db.ref('/events/2017-11-paderno/people')
-    // var people = document.getElementById('people')
+    // var dbRef = db.ref('/events/2017-11-paderno/people')
+    var dbRef = refPeople
+    var people = document.getElementById('people')
 
-    dbRef.on('child_added', (data) => {
-      var div = document.createElement('div')
-      // div.id = data.key
-      div.innerHTML = template.eventPeople(data.val(),data.key)
-      // console.log(data.key);
-      people.appendChild(div)
-      document.getElementById(data.key).addEventListener('click', function (){modifyUser(data.key,data.val())}, false)
+// callback version
+    // dbRef.on('child_added', (data) => {
+    //   var div = document.createElement('div')
+    //   div.innerHTML = template.eventPeople(data.val(),data.key)
+    //   people.appendChild(div)
+    //   document.getElementById(data.key).addEventListener('click', function (){modifyUser(data.key,data.val())}, false)
+    // })
+
+// promises version
+    refPeople.once('value')
+    .then(function (data) {
+      store.people = data.val()
+      for (let caz in store.people) {
+        var div = document.createElement('div')
+        div.innerHTML = template.eventPeople(store.people[caz],caz)
+        // console.log( template.eventPeople(store.people[caz],caz));
+        people.appendChild(div)
+        document.getElementById('edit'+caz).addEventListener('click', function (){
+          editUser(caz)
+        }, false)
+      }
     })
-
-
-
+    // refPeople.on('child_changed', function () {
+    //   console.log('modified')
+    // })
   } else {
     if (private) location.href = 'login'
   }
@@ -228,3 +244,6 @@ window.onload = function() {
 
 <!-- dialogs -->
 <script src="{{ site.baseurl }}/assets/js/dialogs.js"></script>
+
+<!-- store -->
+<script src="{{ site.baseurl }}/assets/js/store.js"></script>

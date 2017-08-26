@@ -8,11 +8,11 @@ var template = {
   },
   eventPeople: function (info,key) {
     var html =  `
-    <div class="entry">
+    <div id="${key}" class="entry">
       <div class="separator"></div>
       <div class="entry-title">
         ${info.name}
-        <div id="${key}" class="edit-action">
+        <div id="edit${key}" class="edit-action">
           <i class="fa fa-align-right"></i>
         </div>
       </div>
