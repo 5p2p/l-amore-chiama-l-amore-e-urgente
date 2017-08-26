@@ -263,7 +263,7 @@ header.main.top {
   top: 20px;
   left: 0%;
   width: 100%;
-  height: auto;
+  height: 100%;
   z-index: 1000; }
 
 .dialog.content h2 {
