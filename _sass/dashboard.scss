@@ -91,6 +91,7 @@ header.main.top {
   // overflow-y: scroll;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  -webkit-user-drag: auto;
 }
 
 .dialog.content {

@@ -269,7 +269,8 @@ header.main.top {
   max-height: 80%;
   z-index: 1001;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  -webkit-user-drag: auto; }
 
 .dialog.content {
   width: 100%;
