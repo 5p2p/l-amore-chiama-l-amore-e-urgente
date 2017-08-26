@@ -259,12 +259,11 @@ header.main.top {
   display: none; }
 
 .dialog {
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 0%;
   width: 100%;
-  z-index: 1000;
-  overflow-y: auto; }
+  z-index: 1000; }
 
 .dialog.content h2 {
   padding-bottom: 2rem; }

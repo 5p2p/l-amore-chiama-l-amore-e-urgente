@@ -67,7 +67,7 @@ header.main.top {
 }
 
 .dialog {
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 0%;
   width: 100%;
@@ -75,7 +75,7 @@ header.main.top {
   // background: yellow;
   z-index: 1000;
   // max-height: 100%;
-  overflow-y: auto;
+  // overflow-y: auto;
   // overflow-y: scroll;
 }
 
