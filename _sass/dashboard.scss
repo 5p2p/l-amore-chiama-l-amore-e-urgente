@@ -71,13 +71,10 @@ header.main.top {
   z-index: 1000;
 }
 
-.dialogcaz {
-  color: black;
+.modal-edit {
   background-color: white;
-  border-radius: 10px;
-  // display: block;
-  display: none;
-  max-height: calc(100% - 100px);
+  display: block;
+  // display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -86,9 +83,17 @@ header.main.top {
   transform: translate(-50%, -50%);
   z-index: 1001;
   overflow: auto;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  @media all and (min-width: 600px) {
+    max-height: calc(100% - 100px);
+    border-radius: 10px;
+  }
 }
 
-.dialogcaz-content {
+.modal-edit-content {
+  padding: 2rem;
   height: 100%;
 }
 
