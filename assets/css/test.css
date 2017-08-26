@@ -35,12 +35,14 @@ body {
 
 
 body {
+  background-color: #ecf0f1;
   padding: 20px;
   z-index: 1000;
 }
 
 .modal {
-  background-color: #ecf0f1;
+  color: black;
+  background-color: white;
   border-radius: 10px;
   display: block;
   /*display: none;*/
