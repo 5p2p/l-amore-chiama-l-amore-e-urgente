@@ -267,16 +267,16 @@ header.main.top {
   width: 80%;
   max-width: 600px;
   max-height: 80%;
-  z-index: 1001; }
+  z-index: 1001;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
 
 .dialog.content {
   width: 100%;
   height: 100%;
   background: white;
   padding: 2rem;
-  padding-bottom: 10rem;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
+  padding-bottom: 10rem; }
   .dialog.content h2 {
     padding-bottom: 2rem; }
 
