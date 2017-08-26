@@ -215,6 +215,10 @@ blockquote cite::before {
     top: 0; }
     nav span {
       padding-left: 2rem; } }
+html {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
 .color-alert {
   color: #e74c3c !important; }
 

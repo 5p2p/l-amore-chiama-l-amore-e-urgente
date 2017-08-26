@@ -10,7 +10,10 @@ $color-pomegranate: #c0392b; // dark red
 
 $color-alert: $color-alizarin;
 
-
+html {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
 .color-alert {
   color: $color-alert !important;
