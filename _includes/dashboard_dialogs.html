@@ -1,54 +1,56 @@
 
-<div id="editUser" class="dialog">
+<div  id="editUser">
   <div id="opacityPage" class="opacity page"></div>
-  <div class="dialog content">
-    <h2>Edit</h2>
+  <div class="dialog">
+    <div class="dialog content">
+      <h2>EditX</h2>
 
+      <div class="form">
+        <input id="name"   type="text" name="name"   placeholder="Nome e Cognome"/>
+        <input id="email"  type="text" name="email"  placeholder="Email"/>
+        <input id="city"   type="text" name="city"   placeholder="Da dove vieni?"/>
+        <input id="mobile" type="text" name="mobile" placeholder="Cellulare"  class="medium input"/>
+        <input id="age"    type="text" name="age"    placeholder="Età (anni)" class="small input"/>
+        <input id="intolerance" type="text" name="intolerance" placeholder="Intolleranze"/>
+
+      <ul class="radio">
+      <!-- <p class="small text">Hai intolleranze alimentari?</p> -->
+       <li  id="user">
+         <input id="user-radio" type="radio" name="selector" checked>
+         <label for="f-option">Partecipante</label>
+         <div class="check"></div>
+         <!-- <input  id="intolerance"     type="text"  name="intolerance"    placeholder="Quali?"   disabled/> -->
+       </li>
+       <li  id="member">
+         <input id="member-radio" type="radio" name="selector" >
+         <label for="s-option">Servizio</label>
+         <div class="check"></div>
+         <!-- <div class="check"><div class="inside"></div></div> -->
+       </li>
+       <li  id="staff">
+         <input id="staff-radio" type="radio" name="selector" >
+         <label for="s-option">Staff</label>
+         <div class="check"></div>
+         <!-- <div class="check"><div class="inside"></div></div> -->
+       </li>
+      </ul>
+      <div class="" style="text-align: right">
+        <button id="update" class="input-btn" name="update">Update</button>
+        <button id="close"  class="input-btn white" name="cancel">Close</button>
+      </div>
+    </div>
+
+    <div class="separator"></div>
     <div class="form">
-      <input id="name"   type="text" name="name"   placeholder="Nome e Cognome"/>
-      <input id="email"  type="text" name="email"  placeholder="Email"/>
-      <input id="city"   type="text" name="city"   placeholder="Da dove vieni?"/>
-      <input id="mobile" type="text" name="mobile" placeholder="Cellulare"  class="medium input"/>
-      <input id="age"    type="text" name="age"    placeholder="Età (anni)" class="small input"/>
-      <input id="intolerance" type="text" name="intolerance" placeholder="Intolleranze"/>
-
-    <ul class="radio">
-    <!-- <p class="small text">Hai intolleranze alimentari?</p> -->
-     <li  id="user">
-       <input id="user-radio" type="radio" name="selector" checked>
-       <label for="f-option">Partecipante</label>
-       <div class="check"></div>
-       <!-- <input  id="intolerance"     type="text"  name="intolerance"    placeholder="Quali?"   disabled/> -->
-     </li>
-     <li  id="member">
-       <input id="member-radio" type="radio" name="selector" >
-       <label for="s-option">Servizio</label>
-       <div class="check"></div>
-       <!-- <div class="check"><div class="inside"></div></div> -->
-     </li>
-     <li  id="staff">
-       <input id="staff-radio" type="radio" name="selector" >
-       <label for="s-option">Staff</label>
-       <div class="check"></div>
-       <!-- <div class="check"><div class="inside"></div></div> -->
-     </li>
-    </ul>
-    <div class="" style="text-align: right">
-      <button id="update" class="input-btn" name="update">Update</button>
-      <button id="close"  class="input-btn white" name="cancel">Close</button>
+      <input id="name"   type="text" name="name"   placeholder="type DELETE to remove user"/>
+      <div class="" style="text-align: right">
+        <button id="delete" class="input-btn white color-alert" name="delete">Delete</button>
+      </div>
     </div>
-  </div>
 
-  <div class="separator"></div>
-  <div class="form">
-    <input id="name"   type="text" name="name"   placeholder="type DELETE to remove user"/>
-    <div class="" style="text-align: right">
-      <button id="delete" class="input-btn white color-alert" name="delete">Delete</button>
+      <!-- <div class="centered box"> -->
+      <!-- </div> -->
+
     </div>
-  </div>
-
-    <!-- <div class="centered box"> -->
-    <!-- </div> -->
-
   </div>
 </div>
