@@ -1,0 +1,63 @@
+html {
+  /*overflow: scroll;*/
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 250%;
+  /*overflow: scroll;*/
+  /*height: 100%;*/
+}
+
+.dialog {
+  /*background-color: #ecf0f1;*/
+  /*border-radius: 10px;*/
+  /*display: none;*/
+  /*display: block;*/
+  /*max-height: calc(100% - 100px);*/
+  /*position: absolute;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*right: auto;*/
+  /*bottom: auto;*/
+  /*transform: translate(-50%, -50%);*/
+  /*z-index: 990;*/
+
+}
+
+.dialog-content {
+  /*height: 100%;*/
+  /*overflow: auto;*/
+  /*overflow-y: scroll;*/
+}
+
+
+/*------------------------------------*/
+
+
+body {
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  display: block;
+  /*display: none;*/
+  max-height: calc(100% - 100px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  z-index: 990;
+  overflow: auto;
+  /*overflow-y: scroll;*/
+}
+
+.modal-body {
+  height: 100%;
+  /*overflow: auto;*/
+  /*overflow-y: scroll;*/
+}
