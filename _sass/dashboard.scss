@@ -103,6 +103,7 @@ header.main.top {
   padding: 2rem;
   // margin: 0 2rem;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .page-content {
