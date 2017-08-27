@@ -266,6 +266,7 @@ function registration() {
   document.getElementById('n-intollerances').addEventListener('click', function(){
     document.getElementById('n-radio').checked = true;
     document.getElementById('intolerance').disabled = true;
+    document.getElementById('intolerance').value = '';
   }, false)
 
   document.getElementById('registration').addEventListener('click', function () {

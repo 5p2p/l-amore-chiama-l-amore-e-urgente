@@ -15,3 +15,6 @@
   - clean up the code:
     - create modules (eg components, services, store)
     - getElementById make vars where called multiple times
+
+- reactive dashboard
+  - update list when a new child is added from registration
