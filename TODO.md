@@ -1,9 +1,17 @@
-- have unique and people share the same user key
-  - first create a key
-  - then set the same key to the same folders
+- users Role
+  - statistics users on top of the dahboard page
+  - virtual pages for users, staff, members (servizio)
+  - change user role in editUser
 
-- routing from iscrizioni.5p2p.it to ---> registration
-- statistics users on top of the dahboard page
-- virtual pages for users, staff, members (servizio)
-- change user role in editUser
-- delete a user in editUser
+- images for registration
+  - top on registration (eg remove red top bar)
+  - top on success message
+
+- setup automatic emails
+  - firebase functions
+  - email schedule
+  - markdown templating
+
+  - clean up the code:
+    - create modules (eg components, services, store)
+    - getElementById make vars where called multiple times

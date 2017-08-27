@@ -48,35 +48,37 @@
 <div  id="editUser">
   <div id="opacityPage" class="opacity page"></div>
   <div  class="modal-edit">
-      <div class="modal-edit-content">
+    <div class="modal-edit-content">
 
-        <h2>Edit</h2>
+      <h2>Edit</h2>
 
-        <div class="form">
-          <input id="name"   type="text" name="name"   placeholder="Nome e Cognome"/>
-          <input id="email"  type="text" name="email"  placeholder="Email"/>
-          <input id="city"   type="text" name="city"   placeholder="Da dove vieni?"/>
-          <input id="mobile" type="text" name="mobile" placeholder="Cellulare"  class="medium input"/>
-          <input id="age"    type="text" name="age"    placeholder="Età (anni)" class="small input"/>
-          <input id="intolerance" type="text" name="intolerance" placeholder="Intolleranze"/>
+      <div class="form">
+        <input id="name"   type="text" name="name"   placeholder="Nome e Cognome"/>
+        <input id="email"  type="text" name="email"  placeholder="Email"/>
+        <input id="city"   type="text" name="city"   placeholder="Da dove vieni?"/>
+        <input id="mobile" type="text" name="mobile" placeholder="Cellulare"  class="medium input"/>
+        <input id="age"    type="text" name="age"    placeholder="Età (anni)" class="small input"/>
+        <input id="intolerance" type="text" name="intolerance" placeholder="Intolleranze"/>
 
+        <!-- // RADIO -->
         <ul class="radio">
          <li  id="user">
            <input id="user-radio" type="radio" name="selector" checked>
-           <label for="f-option">Partecipante</label>
+           <label for="user-option">Partecipante</label>
            <div class="check"></div>
          </li>
          <li  id="member">
            <input id="member-radio" type="radio" name="selector" >
-           <label for="s-option">Servizio</label>
+           <label for="member-option">Servizio</label>
            <div class="check"></div>
          </li>
          <li  id="staff">
            <input id="staff-radio" type="radio" name="selector" >
-           <label for="s-option">Staff</label>
+           <label for="staff-option">Staff</label>
            <div class="check"></div>
          </li>
         </ul>
+
         <div class="" style="text-align: right">
           <button id="update" class="input-btn" name="update">Update</button>
           <button id="close"  class="input-btn white" name="cancel">Close</button>
@@ -85,7 +87,7 @@
 
       <div class="separator"></div>
       <div class="form">
-        <input id="name"   type="text" name="name"   placeholder="type DELETE to remove user"/>
+        <input id="typeDelete"   type="text" name="name"   placeholder="type DELETE to remove user"/>
         <div class="" style="text-align: right">
           <button id="delete" class="input-btn white color-alert" name="delete">Delete</button>
         </div>
@@ -281,7 +283,8 @@ function registration() {
       city: city,
       mobile: mobile,
       age: age,
-      intolerance: intolerance
+      intolerance: intolerance,
+      role: 'user'
     }
     if (anyEmpty([name,email,city,mobile,age])) {
       formAlert('Tutti i campi sono obbligatori')
