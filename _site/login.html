@@ -166,16 +166,13 @@ function newUser() {
 }
 
 function registerUser(user) {
-  // formAlert(name+" risulta essere già registrato")
-  //
   var name = user.name
-  // var refUnique = firebase.database().ref(ref+'/unique')
-  // var refPeople = firebase.database().ref(ref+'/people')
   refUnique.orderByChild("name").equalTo(name).once('value', function(snapshot) {
     if (snapshot.val() === null) {
-      // console.log('name is unique');
-      refUnique.push({name: user.name})
-      refPeople.push(user, function (error) {
+      var uniqueKey = refUnique.push().key
+      // refUnique.push({name: user.name})
+      refUnique.child(uniqueKey).set({name: user.name})
+      refPeople.child(uniqueKey).set(user, function (error) {
         if (error) {
           console.log(error);
         } else {
@@ -184,7 +181,6 @@ function registerUser(user) {
         }
       })
     } else {
-      // console.log('name failed!');
       formAlert(name+" risulta essere già registrato")
     }
   })

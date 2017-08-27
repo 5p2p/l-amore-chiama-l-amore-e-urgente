@@ -13,14 +13,9 @@ function editUser(key) {
   document.getElementById("intolerance").value = data.intolerance;
 
 // UPDATE
-document.getElementById('update').addEventListener('click', function updateCall () {
+document.getElementById('update').addEventListener('click', updateCall, false)
+function updateCall () {
   document.getElementById('editUser').style.display = 'none'
-  // var defaultLabel = document.getElementById('update').innerText
-  // document.getElementById('update').innerText = '...'
-  // setTimeout(function(){
-  //   document.getElementById('editUser').style.display = 'none'
-  //   document.getElementById('update').innerText = defaultLabel
-  // }, 1000)
 
   // var dataUpdate = {
   store.people[key] = {
@@ -38,14 +33,26 @@ document.getElementById('update').addEventListener('click', function updateCall 
   document.getElementById('edit'+key).addEventListener('click', function (){
     editUser(key)
   }, false)
-  // // update firebase
+
+  // update firebase
   refPeople.child(key).update(store.people[key])
 
-  document.getElementById('update').removeEventListener('click', updateCall , false)
-}, false)
+  // remove listeners to avoid strange overwritings
+  removeAllListeners()
+}
 
 // CLOSE
-  document.getElementById('close').addEventListener('click', function () {
-    document.getElementById('editUser').style.display = 'none'
-  }, false)
+  document.getElementById('close').addEventListener('click', closeCall, false)
+  function closeCall () {
+      document.getElementById('editUser').style.display = 'none'
+      document.getElementById('close').removeEventListener('click', closeCall , false)
+      removeAllListeners()
+  }
+
+  // REMOVE LISTENERS
+  function removeAllListeners () {
+        document.getElementById('update').removeEventListener('click', updateCall , false)
+        document.getElementById('close').removeEventListener('click', closeCall , false)
+
+  }
 }
