@@ -64,7 +64,6 @@ function updateCall () {
   components.dashboard.stats(store.people, 'store-stats')
 
   // update firebase
-  console.log(store.people[key].name);
   refUnique.child(key).update({name: store.people[key].name})
   refPeople.child(key).update(store.people[key])
 
