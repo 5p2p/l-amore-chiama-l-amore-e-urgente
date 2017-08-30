@@ -92,9 +92,17 @@ function updateCall () {
       setTimeout(function(){
         document.getElementById('editUser').style.display = 'none'
         document.getElementById('delete').innerText = 'Delete'
+        typeDelete.value = ''
       }, 1000)
+
+      // update views
+      components.dashboard.people(store.people, 'store-people', 'role', originalView)
+      components.dashboard.stats(store.people, 'store-stats')
+
+      // update firebase
       refUnique.child(key).remove()
       refPeople.child(key).remove()
+
       removeAllListeners()
     } else {
       typeDelete.value = ''
