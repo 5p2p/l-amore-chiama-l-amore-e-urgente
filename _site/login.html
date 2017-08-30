@@ -219,7 +219,7 @@ function registration() {
       age: age,
       intolerance: intolerance,
       // role: 'users'
-      role: store.config.people.roles.users
+      role: store.config.roles.users
     }
     if (anyEmpty([name,email,city,mobile,age])) {
       formAlert('Tutti i campi sono obbligatori')

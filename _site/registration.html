@@ -36,14 +36,13 @@
 
   <div id="content">
     <div class="page-content">
-      
-<div class="form">
+      <div class="form">
 
-<input id="name" type="text" name="name" placeholder="Nome e Cognome" />
-<input id="email" type="text" name="email" placeholder="Email" />
-<input id="city" type="text" name="city" placeholder="Da dove vieni?" />
-<input id="mobile" type="text" name="mobile" placeholder="Cellulare" class="medium input" />
-<input id="age" type="text" name="age" placeholder="Età (anni)" class="small input" />
+<input id="name"   type="text"    name="name"    placeholder="Nome e Cognome"/>
+<input id="email"  type="text"    name="email"    placeholder="Email"/>
+<input id="city"   type="text"    name="city"    placeholder="Da dove vieni?"/>
+<input id="mobile" type="text"    name="mobile"    placeholder="Cellulare"  class="medium input"/>
+<input id="age"    type="text"    name="age"    placeholder="Età (anni)" class="small input"/>
 
 <!--div class="">
   <p class="small text">Hai intolleranze alimentari?</p>
@@ -54,17 +53,17 @@
 
 <ul class="radio">
 <p class="small text">Hai intolleranze alimentari?</p>
- <li id="y-intollerances">
-   <input id="y-radio" type="radio" name="selector" />
+ <li  id="y-intollerances">
+   <input id="y-radio" type="radio" name="selector" >
    <label for="f-option">Si</label>
    <div class="check"></div>
-   <input id="intolerance" type="text" name="intolerance" placeholder="Quali?" disabled="" />
+   <input  id="intolerance"     type="text"  name="intolerance"    placeholder="Quali?"   disabled/>
  </li>
  <!-- <li> -->
  <!-- </li> -->
 
- <li id="n-intollerances">
-   <input id="n-radio" type="radio" name="selector" checked="" />
+ <li  id="n-intollerances">
+   <input id="n-radio" type="radio" name="selector" checked>
    <label for="s-option">No</label>
    <div class="check"></div>
    <!-- <div class="check"><div class="inside"></div></div> -->
@@ -78,7 +77,6 @@
 <div id="alert"></div>
 
 </div>
-
 
     </div>
   </div>
@@ -253,7 +251,7 @@ function registration() {
       age: age,
       intolerance: intolerance,
       // role: 'users'
-      role: store.config.people.roles.users
+      role: store.config.roles.users
     }
     if (anyEmpty([name,email,city,mobile,age])) {
       formAlert('Tutti i campi sono obbligatori')
