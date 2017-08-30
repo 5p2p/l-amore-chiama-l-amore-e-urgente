@@ -6,12 +6,12 @@ var template = {
       <div class='message'>${data.email}</div>
     `
   },
-  dashStats: function () {
-    var html = `
-    <div>ciao</div>
-    `
-    return html
-  },
+  // dashStats: function (stats) {
+  //   var html = `
+  //   <div id="stats-users" class="stats-content">${stats.users} Users</div>
+  //   `
+  //   return html
+  // },
   eventPeople: function (info,key) {
     var html =  `
     <div id="${key}" class="entry">

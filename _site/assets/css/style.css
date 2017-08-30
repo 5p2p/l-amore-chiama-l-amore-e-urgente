@@ -445,3 +445,14 @@ input[type=radio]:checked ~ .check {
 
 input[type=radio]:checked ~ .check::before {
   background: #bdc3c7; }
+
+.stats-content {
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1.4; }
+
+.two-digits {
+  padding-right: 0.4rem;
+  text-align: right;
+  display: inline-block;
+  width: 2rem; }

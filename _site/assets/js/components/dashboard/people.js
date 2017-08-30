@@ -1,11 +1,14 @@
-components.dashboard.people = function (data, id) {
+components.dashboard.people = function (data, id, objKey, objValue) {
   var el = document.getElementById(id)
-  for (var key in data) {
-    var div = document.createElement('div')
-    div.innerHTML = template.eventPeople(data[key],key)
-    el.appendChild(div)
-    document.getElementById('edit'+key).addEventListener('click', function (){
-      editUser(key)
-    }, false)
+  el.innerHTML = ''
+  for (let key in data) {
+    if (data[key][objKey] === objValue || objKey === undefined) {
+      var div = document.createElement('div')
+      div.innerHTML = template.eventPeople(data[key],key)
+      el.appendChild(div)
+      document.getElementById('edit'+key).addEventListener('click', function (){
+        editUser(data[key], key)
+      }, false)
+    }
   }
 }

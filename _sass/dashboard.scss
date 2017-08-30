@@ -322,3 +322,17 @@ input[type=radio]:checked ~ .check::before{
 input[type=radio]:checked ~ label{
   // color: $radio-color-selected;
 }
+
+.stats-content {
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  // padding-bottom: 0.4rem;
+}
+
+.two-digits {
+  padding-right: 0.4rem;
+  text-align: right;
+  display: inline-block;
+  width: 2rem;
+}

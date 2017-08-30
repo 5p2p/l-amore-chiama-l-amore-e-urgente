@@ -17,3 +17,6 @@
   - clean up the code:
     - create modules (eg components, services, store)
     - getElementById make vars where called multiple times
+
+  - webpack
+    - this allows safe use of ES6 (ie _let_ etc.)

@@ -56,17 +56,17 @@
 
         <!-- // RADIO -->
         <ul class="radio">
-         <li  id="user">
-           <input id="user-radio" type="radio" name="selector" checked>
-           <label for="user-option">Partecipante</label>
+         <li id="users-click-radio">
+           <input id="users-radio" type="radio" name="selector" checked>
+           <label for="users-option">Partecipante</label>
            <div class="check"></div>
          </li>
-         <li  id="member">
-           <input id="member-radio" type="radio" name="selector" >
-           <label for="member-option">Servizio</label>
+         <li  id="members-click-radio">
+           <input id="members-radio" type="radio" name="selector" >
+           <label for="members-option">Servizio</label>
            <div class="check"></div>
          </li>
-         <li  id="staff">
+         <li  id="staff-click-radio">
            <input id="staff-radio" type="radio" name="selector" >
            <label for="staff-option">Staff</label>
            <div class="check"></div>
@@ -95,11 +95,9 @@
 
 <div id=''>
   <!--  STATISTICS -->
-  <div id='stats'></div>
+  <div id='store-stats'></div>
   <!--  FIREBASE LIST -->
-  <div id='users'></div>
-  <div id='members'></div>
-  <div id='staff-members'></div>
+  <div id='store-people'></div>
   <div class='separator'></div>
 </div>
 
@@ -112,7 +110,9 @@
 
 
   <!--  Scripts-->
-  
+  <!-- STORE -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/store.js"></script>
+
 <!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script> -->
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
@@ -273,7 +273,8 @@ function registration() {
       mobile: mobile,
       age: age,
       intolerance: intolerance,
-      role: 'user'
+      // role: 'users'
+      role: store.config.people.roles.users
     }
     if (anyEmpty([name,email,city,mobile,age])) {
       formAlert('Tutti i campi sono obbligatori')
@@ -296,13 +297,12 @@ function dashPage(user) {
 // promises version
     refPeople.once('value')
     .then(function (data) {
-      store.people = services.people(data.val(), 'user')
-      store.members = services.people(data.val(), 'member')
-      store.staff = services.people(data.val(), 'staff')
-
-      components.dashboard.people(store.people, 'users')
-      components.dashboard.people(store.members, 'members')
-      components.dashboard.people(store.staff, 'staff-members')
+      // update store
+      store.people = data.val()
+      // setup page
+      components.dashboard.stats(store.people, 'store-stats')
+      components.dashboard.people(store.people, 'store-people', 'role', store.config.roles.users)
+      // components.dashboard.people(store.people, 'store-people')
     })
     // refPeople.on('child_changed', function () {
     //   console.log('modified')
@@ -329,9 +329,6 @@ window.onload = function() {
 }
 </script>
 
-<!-- utilities -->
-<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/utils.js"></script>
-
 <!-- templates -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/templates.js"></script>
 
@@ -343,10 +340,8 @@ window.onload = function() {
 
 <!-- SERVICES -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/services.js"></script>
-<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/services/people.js"></script>
-
-<!-- STORE -->
-<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/store.js"></script>
+<!-- <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/services/people.js"></script> -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/services/utils.js"></script>
 
 
   </body>

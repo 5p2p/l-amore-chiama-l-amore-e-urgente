@@ -1,10 +1,13 @@
-function editUser(key) {
+function editUser(data, key) {
+
+// VIEW after updating data
+  let originalView = data.role
+
 // SHOW DIALOG
   document.getElementById('opacityPage').style.display = 'block'
   document.getElementById('editUser').style.display = 'block'
 
 // GET DATA
-  var data = store.people[key]
   document.getElementById("name").value = data.name;
   document.getElementById("email").value = data.email;
   document.getElementById("city").value = data.city;
@@ -13,29 +16,30 @@ function editUser(key) {
   document.getElementById("intolerance").value = data.intolerance;
 
 // RADIO (user roles)
-if (data.role === 'user'|| data.role === undefined || data.role === '') {
+if (data.role === store.config.roles.users|| data.role === undefined || data.role === '') {
+  setUserRole()
+} else if (data.role === store.config.roles.members) {
+  setMemberRole()
+} else if (data.role === store.config.roles.staff) {
+  setStaffRole()
+} else {
   setUserRole()
 }
-if (data.role === 'member') {
-  setMemberRole()
-}
-if (data.role === 'staff') {
-  setStaffRole()
-}
-document.getElementById('user').addEventListener('click', setUserRole, false)
-document.getElementById('member').addEventListener('click', setMemberRole, false)
-document.getElementById('staff').addEventListener('click', setStaffRole, false)
+document.getElementById('users-click-radio').addEventListener('click', setUserRole, false)
+document.getElementById('members-click-radio').addEventListener('click', setMemberRole, false)
+document.getElementById('staff-click-radio').addEventListener('click', setStaffRole, false)
+
 function setUserRole(){
-  document.getElementById('user-radio').checked = true;
-  store.people[key].role = 'user'
+  document.getElementById('users-radio').checked = true;
+  store.people[key].role = store.config.roles.users
 }
 function setMemberRole(){
-  document.getElementById('member-radio').checked = true;
-  store.people[key].role = 'member'
+  document.getElementById('members-radio').checked = true;
+  store.people[key].role = store.config.roles.members
 }
 function setStaffRole(){
   document.getElementById('staff-radio').checked = true;
-  store.people[key].role = 'staff'
+  store.people[key].role = store.config.roles.staff
 }
 
 // UPDATE
@@ -51,11 +55,14 @@ function updateCall () {
   store.people[key].intolerance = document.getElementById("intolerance").value
 
   // // update views
-  let div = document.getElementById(key)
-  div.innerHTML = template.eventPeople(store.people[key],key)
-  document.getElementById('edit'+key).addEventListener('click', function (){
-    editUser(key)
-  }, false)
+  // let div = document.getElementById(key)
+  // div.innerHTML = template.eventPeople(store.people[key],key)
+  // document.getElementById('edit'+key).addEventListener('click', function (){
+  //   editUser(key)
+  // }, false)
+  console.log(data.role);
+  components.dashboard.people(store.people, 'store-people', 'role', originalView)
+  components.dashboard.stats(store.people, 'store-stats')
 
   // update firebase
   refPeople.child(key).update(store.people[key])
@@ -100,8 +107,8 @@ function updateCall () {
         document.getElementById('update').removeEventListener('click', updateCall , false)
         document.getElementById('close').removeEventListener('click', closeCall , false)
         document.getElementById('delete').removeEventListener('click', deleteCall , false)
-        document.getElementById('user').removeEventListener('click', setUserRole , false)
-        document.getElementById('member').removeEventListener('click', setMemberRole , false)
-        document.getElementById('staff').removeEventListener('click', setStaffRole , false)
+        document.getElementById('users-click-radio').removeEventListener('click', setUserRole , false)
+        document.getElementById('members-click-radio').removeEventListener('click', setMemberRole , false)
+        document.getElementById('staff-click-radio').removeEventListener('click', setStaffRole , false)
   }
 }

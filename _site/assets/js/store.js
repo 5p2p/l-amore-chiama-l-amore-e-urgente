@@ -1,2 +1,11 @@
 // STORE
-var store = {}
+var store = {
+  people: {}, // set by firebase
+  config: {
+    roles: {
+      users: 'users',
+      members: 'members',
+      staff: 'staff'
+    }
+  }
+}
