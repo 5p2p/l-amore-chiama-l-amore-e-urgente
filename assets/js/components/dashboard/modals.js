@@ -60,11 +60,12 @@ function updateCall () {
   // document.getElementById('edit'+key).addEventListener('click', function (){
   //   editUser(key)
   // }, false)
-  console.log(data.role);
   components.dashboard.people(store.people, 'store-people', 'role', originalView)
   components.dashboard.stats(store.people, 'store-stats')
 
   // update firebase
+  console.log(store.people[key].name);
+  refUnique.child(key).update({name: store.people[key].name})
   refPeople.child(key).update(store.people[key])
 
   // remove listeners to avoid strange overwritings
