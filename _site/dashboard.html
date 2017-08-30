@@ -36,15 +36,9 @@
 
   <div id="content">
     <div class="page-content">
-      <!-- <div id="bcaz" style="color: black;">
-  Modal
-</div>
-<div id="ccaz" style="color: black;">
-  Close
-</div> -->
-
-<!--  MODAL DIALOG -->
-
+      <div id=''>
+  <!--  MODAL DIALOG -->
+  
 <div  id="editUser">
   <div id="opacityPage" class="opacity page"></div>
   <div  class="modal-edit">
@@ -97,23 +91,17 @@
    </div>
 </div>
 
-<!--  FIREBASE LIST -->
-<div id='people'></div>
+</div>
 
-<div class='separator'></div>
-
-
-<!-- <script type="text/javascript">
-document.getElementById('bcaz').addEventListener('click', function (){
-  console.log('open');
-  document.getElementById('editUser').style.display = 'block'
-}, false)
-
-document.getElementById('ccaz').addEventListener('click', function (){
-  console.log('close');
-  document.getElementById('editUser').style.display = 'none'
-}, false)
-</script> -->
+<div id=''>
+  <!--  STATISTICS -->
+  <div id='stats'></div>
+  <!--  FIREBASE LIST -->
+  <div id='users'></div>
+  <div id='members'></div>
+  <div id='staff-members'></div>
+  <div class='separator'></div>
+</div>
 
     </div>
   </div>
@@ -302,36 +290,19 @@ function dashPage(user) {
   document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
 
-    // document.getElementById('dialog')
-    // firebase.initializeApp(config)
     var db = firebase.database()
-    // var dbRef = db.ref('/events/2017-02-sorrento/users')
-
-    // var dbRef = db.ref('/events/2017-11-paderno/people')
     var dbRef = refPeople
-    var people = document.getElementById('people')
-
-// callback version
-    // dbRef.on('child_added', (data) => {
-    //   var div = document.createElement('div')
-    //   div.innerHTML = template.eventPeople(data.val(),data.key)
-    //   people.appendChild(div)
-    //   document.getElementById(data.key).addEventListener('click', function (){modifyUser(data.key,data.val())}, false)
-    // })
 
 // promises version
     refPeople.once('value')
     .then(function (data) {
-      store.people = data.val()
-      for (let caz in store.people) {
-        var div = document.createElement('div')
-        div.innerHTML = template.eventPeople(store.people[caz],caz)
-        // console.log( template.eventPeople(store.people[caz],caz));
-        people.appendChild(div)
-        document.getElementById('edit'+caz).addEventListener('click', function (){
-          editUser(caz)
-        }, false)
-      }
+      store.people = services.people(data.val(), 'user')
+      store.members = services.people(data.val(), 'member')
+      store.staff = services.people(data.val(), 'staff')
+
+      components.dashboard.people(store.people, 'users')
+      components.dashboard.people(store.members, 'members')
+      components.dashboard.people(store.staff, 'staff-members')
     })
     // refPeople.on('child_changed', function () {
     //   console.log('modified')
@@ -364,10 +335,17 @@ window.onload = function() {
 <!-- templates -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/templates.js"></script>
 
-<!-- dialogs -->
-<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/modals.js"></script>
+<!-- COMPONENTS -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/components.js"></script>
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/components/dashboard/modals.js"></script>
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/components/dashboard/stats.js"></script>
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/components/dashboard/people.js"></script>
 
-<!-- store -->
+<!-- SERVICES -->
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/services.js"></script>
+<script src="/l-amore-chiama-l-amore-e-urgente/assets/js/services/people.js"></script>
+
+<!-- STORE -->
 <script src="/l-amore-chiama-l-amore-e-urgente/assets/js/store.js"></script>
 
 

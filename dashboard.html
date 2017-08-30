@@ -2,32 +2,20 @@
 title: Dashboard
 permalink: dashboard
 private: true
-#<!-- {% include dashboard_dialogs.html %} -->
 ---
 
-<!-- <div id="bcaz" style="color: black;">
-  Modal
+
+<div id=''>
+  <!--  MODAL DIALOG -->
+  {% include templates/modal.html %}
 </div>
-<div id="ccaz" style="color: black;">
-  Close
-</div> -->
 
-<!--  MODAL DIALOG -->
-{% include templates/modal.html %}
-<!--  FIREBASE LIST -->
-<div id='people'></div>
-
-<div class='separator'></div>
-
-
-<!-- <script type="text/javascript">
-document.getElementById('bcaz').addEventListener('click', function (){
-  console.log('open');
-  document.getElementById('editUser').style.display = 'block'
-}, false)
-
-document.getElementById('ccaz').addEventListener('click', function (){
-  console.log('close');
-  document.getElementById('editUser').style.display = 'none'
-}, false)
-</script> -->
+<div id=''>
+  <!--  STATISTICS -->
+  <div id='stats'></div>
+  <!--  FIREBASE LIST -->
+  <div id='users'></div>
+  <div id='members'></div>
+  <div id='staff-members'></div>
+  <div class='separator'></div>
+</div>
