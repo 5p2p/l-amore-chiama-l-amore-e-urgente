@@ -7,5 +7,8 @@ var store = {
       members: 'members',
       staff: 'staff'
     }
+  },
+  view: {
+    actualView: ''
   }
 }

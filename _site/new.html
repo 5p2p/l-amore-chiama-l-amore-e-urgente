@@ -233,6 +233,8 @@ function registration() {
 
 // DASHBOARD
 function dashPage(user) {
+
+  store.config.actualView = store.config.roles.users
   document.getElementById('logout').addEventListener('click', signOut, false)
   if (user) {
 
@@ -240,18 +242,26 @@ function dashPage(user) {
     var dbRef = refPeople
 
 // promises version
-    refPeople.once('value')
-    .then(function (data) {
+    // refPeople.once('value')
+    // .then(function (data) {
+    //   // update store
+    //   store.people = data.val()
+    //   // setup page
+    //   components.dashboard.stats(store.people, 'store-stats')
+    //   components.dashboard.people(store.people, 'store-people', 'role', store.config.roles.users)
+    //   // components.dashboard.people(store.people, 'store-people')
+    // })
+
+    refPeople.on('value', function (data) {
       // update store
       store.people = data.val()
       // setup page
       components.dashboard.stats(store.people, 'store-stats')
-      components.dashboard.people(store.people, 'store-people', 'role', store.config.roles.users)
+      components.dashboard.people(store.people, 'store-people', 'role', store.config.actualView)
+      // components.dashboard.people(store.people, 'store-people', 'role', store.config.roles.users)
       // components.dashboard.people(store.people, 'store-people')
     })
-    // refPeople.on('child_changed', function () {
-    //   console.log('modified')
-    // })
+
   } else {
     if (private) location.href = 'login'
   }

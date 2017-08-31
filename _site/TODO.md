@@ -1,22 +1,12 @@
-- users Role
-  - statistics users on top of the dashboard page
-  - virtual pages for users, staff, members (servizio)
-
-- reactive dashboard
-  - update list when a new child is added from registration
-
-- images for registration
-  - top on registration (eg remove red top bar)
-  - top on success message
-
 - setup automatic emails
   - firebase functions
   - email schedule
   - markdown templating
 
-  - clean up the code:
-    - create modules (eg components, services, store)
-    - getElementById make vars where called multiple times
+- clean up the code:
+  - create modules (eg components, services, store)
+  - webpack - allows to use ES6 (ie _let_ etc.)
 
-  - webpack
-    - this allows safe use of ES6 (ie _let_ etc.)
+- images for registration
+  - top on registration (eg remove red top bar)
+  - top on success message

@@ -58,6 +58,7 @@ ga_analytics: UA-39520577-1
 # ---------------------------------------------------------
 # Jekyll stuff
 # ---------------------------------------------------------
+exclude: ['functions']
 assets: assets/
 images: images/posts
 previews: previews

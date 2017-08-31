@@ -60,8 +60,8 @@ function updateCall () {
   // document.getElementById('edit'+key).addEventListener('click', function (){
   //   editUser(key)
   // }, false)
-  components.dashboard.people(store.people, 'store-people', 'role', originalView)
-  components.dashboard.stats(store.people, 'store-stats')
+  // components.dashboard.people(store.people, 'store-people', 'role', originalView)
+  // components.dashboard.stats(store.people, 'store-stats')
 
   // update firebase
   refUnique.child(key).update({name: store.people[key].name})
@@ -96,8 +96,8 @@ function updateCall () {
       }, 1000)
 
       // update views
-      components.dashboard.people(store.people, 'store-people', 'role', originalView)
-      components.dashboard.stats(store.people, 'store-stats')
+      // components.dashboard.people(store.people, 'store-people', 'role', originalView)
+      // components.dashboard.stats(store.people, 'store-stats')
 
       // update firebase
       refUnique.child(key).remove()

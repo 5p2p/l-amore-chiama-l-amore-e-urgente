@@ -12,6 +12,7 @@ components.dashboard.stats = function (data, id) {
     el.className += 'stats-content'
     el.innerHTML = `<span class='two-digits'>${nn}</span> ${capitalize(key)}`
     el.onclick = function () {
+      store.config.actualView = key
       components.dashboard.people(store.people, 'store-people', 'role', key)
     }
     elStats.appendChild(el)
