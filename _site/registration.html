@@ -74,7 +74,7 @@
 
 <button class="input-btn" id="registration" name="registration">Iscriviti</button>
 
-<div id="alert"></div>
+<div id="alert" class="alert"></div>
 
 </div>
 
@@ -166,8 +166,12 @@ function createNewUser() {
       var errorMessage = error.message
     })
   } else {
-   console.log('the two passwords are different!')
+    document.getElementById('newAlert').innerHTML = `The two passwords are different!`
+    console.log('the two passwords are different!')
   }
+}
+function newUser() {
+  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
 }
 
 
@@ -195,9 +199,6 @@ function loginPage(user) {
   }
 }
 
-function newUser() {
-  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
-}
 
 function registerUser(user) {
   var name = user.name

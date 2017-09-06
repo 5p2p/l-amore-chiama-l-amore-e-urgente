@@ -150,8 +150,12 @@ function createNewUser() {
       var errorMessage = error.message
     })
   } else {
-   console.log('the two passwords are different!')
+    document.getElementById('newAlert').innerHTML = `The two passwords are different!`
+    console.log('the two passwords are different!')
   }
+}
+function newUser() {
+  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
 }
 
 
@@ -179,9 +183,6 @@ function loginPage(user) {
   }
 }
 
-function newUser() {
-  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
-}
 
 function registerUser(user) {
   var name = user.name

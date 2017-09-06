@@ -38,11 +38,12 @@
     <div class="page-content">
       <div class="form">
 
-<input id="email" type="text" name="email" placeholder="Email" />
-<input id="password" type="password" name="password" placeholder="Password" />
-<input id="passwordCheck" type="password" name="passwordCheck" placeholder="Retype password" />
+<input id="email"    type="text"     name="email"    placeholder="Email"   />
+<input id="password" type="password" name="password" placeholder="Password"/>
+<input id="passwordCheck" type="password" name="passwordCheck" placeholder="Retype password"/>
 
 <button class="input-btn" id="newAccount" name="newAccount">New</button>
+<div id="newAlert" class="alert"></div>
 
 </div>
 
@@ -134,8 +135,12 @@ function createNewUser() {
       var errorMessage = error.message
     })
   } else {
-   console.log('the two passwords are different!')
+    document.getElementById('newAlert').innerHTML = `The two passwords are different!`
+    console.log('the two passwords are different!')
   }
+}
+function newUser() {
+  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
 }
 
 
@@ -163,9 +168,6 @@ function loginPage(user) {
   }
 }
 
-function newUser() {
-  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
-}
 
 function registerUser(user) {
   var name = user.name
