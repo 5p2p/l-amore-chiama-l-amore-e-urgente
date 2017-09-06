@@ -42,7 +42,9 @@
 <input id="password" type="password" name="password" placeholder="Password"/>
 <input id="passwordCheck" type="password" name="passwordCheck" placeholder="Retype password"/>
 
-<button class="input-btn" id="newAccount" name="newAccount">New</button>
+<!-- <button class="input-btn" id="newAccount" name="newAccount">New</button> -->
+<button class="input-btn" onclick="createNewUser()">New2</button>
+
 <div id="newAlert" class="alert"></div>
 
 </div>
@@ -140,11 +142,10 @@ function createNewUser() {
   }
 }
 function newUser() {
-  document.getElementById('newAccount').addEventListener('touchstart', createNewUser, false)
-  document.getElementById('newAccount').addEventListener('touchend', createNewUser, false)
-  document.getElementById('newAccount').addEventListener('touchmove', createNewUser, false)
-  // document.getElementById('newAccount').addEventListener('mousemove', createNewUser, false)
-  document.getElementById('newAccount').addEventListener('click', createNewUser, false)
+  // document.getElementById('newAccount').addEventListener('touchstart', createNewUser, false)
+  // document.getElementById('newAccount').addEventListener('touchend', createNewUser, false)
+  // document.getElementById('newAccount').addEventListener('touchmove', createNewUser, false)
+  // document.getElementById('newAccount').addEventListener('click', createNewUser, false)
 }
 
 
