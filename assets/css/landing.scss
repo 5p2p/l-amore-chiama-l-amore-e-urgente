@@ -3,8 +3,7 @@
 ---
 
 // Color palette
-// $key_color:    #DF3C2B; //#0D83AF; //#00d7ff;
-$key_color:    #E74C3C; //#0D83AF; //#00d7ff;
+$key_color:    #DF3C2B; //#0D83AF; //#00d7ff;
 $key_color_light: #F5C1AB;
 $button_color: #3498db;
 $text_color_inverse: #2c3e50;
@@ -42,30 +41,6 @@ header {
     max-width: 600px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-  }
-}
-
-.underline {
-  text-decoration: underline;
-}
-.relevant-box {
-  padding-top: 1.6rem;
-  padding-bottom: 0rem;
-}
-.relevant-text {
-  font-size: 2.2rem;
-  font-weight: bold;
-}
-.relevant-subtext {
-  font-size: 1.4rem;
-}
-
-.header-image {
-  // width: 100%;
-  margin: 0 auto;
-  img {
-    width: 100%;
-    max-width: $bigger_break;
   }
 }
 
@@ -120,15 +95,9 @@ a:hover {
   border-bottom: 0px;
 }
 
-a.no-text-decoration {
-  text-decoration: none;
-  border-bottom: none;
-}
-
 span.btn, input.btn {
-  display: inline-block;
+  display: block;
   width: 6rem;
-  height: 2rem;
   text-align: center;
   margin: 0 auto;
   padding: 0.6rem 1.0rem;
@@ -137,15 +106,6 @@ span.btn, input.btn {
   background-color: $button_color;
   border-radius: 4px;
   box-shadow: 0.1px 0.1px 2px $key_color_light;
-  color: white;
-}
-
-span.main-btn {
-  font-size: $font-size;
-  background-color: $button_color;
-  font-weight: bold;
-  padding: 0.6rem 1.0rem;
-  border-radius: 4px;
   color: white;
 }
 
@@ -214,14 +174,11 @@ a span.btn:hover, input.btn:hover {
   background-color: white;
 }
 
-.content-page {
+#content {
   flex: 1;
-  // margin-top: 3000px;
   margin-bottom: 2rem;
   // padding: 0 2rem;
 }
-
-
 
 hr {
   border: 0;
@@ -335,4 +292,4 @@ blockquote {
 
 // -----------------------------------------------------------
 // imports
-@import "dashboard";
+// @import "dashboard";

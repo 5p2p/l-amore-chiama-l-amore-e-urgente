@@ -27,6 +27,7 @@
   <!-- <link rel="stylesheet" href="/assets/css/basscss.btn.css" media="all"> -->
   <!-- <link rel="stylesheet" href="/assets/css/ace.min.css" media="all"> -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/colors.css" media="all">
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/landing.css" media="all"> -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" media="all">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,400italic,700|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
@@ -41,7 +42,19 @@
 
 <body>
 
-  <header>
+  <header class="top main fixed">
+    <a class="no-text-decoration" href="{{ site.baseurl }}/">
+      <img class="top" src="{{ site.baseurl }}/images/logo/5pani2pesci-2017-white-text-200.png" alt="5pani2pesci">
+    </a>
+    <div style="position: absolute; right: 1rem;">
+      <a data-scroll href="#anchor"><span class="main-btn">Iscriviti</span></a>
+    </div>
+
+
+  </header>
+
+
+  <!-- <header class="this">
 
     <nav>
       <span><a data-scroll href="#che-cosa">Cos'è?</a></span>
@@ -52,14 +65,19 @@
       <span><a data-scroll href="#anchor">Iscriviti</a></span>
     </nav>
 
-    <img class="negative-space-big-screen" alt="{{page.title}} {{page.location}}" src="{{site.baseurl}}{{page.image}}" />
 
     <a data-scroll href="#anchor"><span class="btn">Iscriviti</span></a>
 
-  </header>
+  </header> -->
+
+  <!-- <img class="negative-space-big-screen" alt="{{page.title}} {{page.location}}" src="{{site.baseurl}}{{page.image}}" /> -->
+  <div class="header-image fixed-header">
+    <img alt="{{page.title}} {{page.location}}" src="{{site.baseurl}}{{page.image}}" />
+  </div>
+
 
   <!-- <div id="content" class="max-width-3 mx-auto"> -->
-  <div id="content" class="">
+  <div id="content" class="content-page">
     {{content}}
   </div>
 
