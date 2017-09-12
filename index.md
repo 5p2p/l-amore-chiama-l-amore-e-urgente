@@ -5,9 +5,10 @@ image: /images/splash/amore-chiama-header.png
 facebook_image: /images/splash/amore-chiama-header.png
 price: 120
 youtube: https://www.youtube.com/embed/M92ctSwuV4o
+top-action-button: true
 layout: landing
 ---
-<div id="testimonial" class="light-section  padding-2-bottom">
+<div class="light-section  padding-2-bottom">
 <div class="max-width margin-auto padding-2-side" markdown="1">
 
 <div class="relevant-box">

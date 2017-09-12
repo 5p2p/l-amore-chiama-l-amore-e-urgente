@@ -19,6 +19,9 @@ header {
     margin-top: 2rem;
     margin-bottom: 2rem; }
 
+header.light {
+  background-color: white !important; }
+
 .underline {
   text-decoration: underline; }
 
@@ -38,6 +41,9 @@ header {
   .header-image img {
     width: 100%;
     max-width: 600px; }
+
+.header-image.light {
+  background-color: white; }
 
 footer {
   background-color: #E74C3C;

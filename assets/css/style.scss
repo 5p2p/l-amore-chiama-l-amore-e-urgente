@@ -45,6 +45,10 @@ header {
   }
 }
 
+header.light {
+    background-color: white !important;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -67,6 +71,9 @@ header {
     width: 100%;
     max-width: $bigger_break;
   }
+}
+.header-image.light {
+  background-color: white;
 }
 
 footer {
