@@ -31,9 +31,7 @@ Per *dare* o *ricevere* un passaggio in auto iscriviti alla pagina **[Passaggi 5
 
 ### <i class="fa fa-car padding-1-right" aria-hidden="true"></i> In auto
 
-Integer condimentum massa non dolor dapibus maximus. Duis iaculis elit nunc, eget malesuada ipsum lacinia lobortis. In hac habitasse platea dictumst. Suspendisse sed venenatis dui, et porttitor ligula. In aliquet, nulla sit amet auctor finibus, massa mi volutpat diam, ut rutrum purus tortor sit amet augue. Duis quis lectus non sapien elementum porttitor pulvinar nec ex. Sed laoreet tincidunt aliquam. Phasellus a dui eleifend, ornare tortor vitae, sollicitudin sem.
-
-[Apri Google Maps](https://www.google.it/maps/place/Casa+Di+Spiritualita'+Armida+Barelli/@40.6378053,14.4149224,13.47z/data=!4m5!3m4!1s0x133b99012d6b0285:0x79254728b44c664d!8m2!3d40.6470276!4d14.4222407?hl=en)
+Ecco le coordinate [Google Maps](https://www.google.it/maps/place/Casa+Di+Spiritualita'+Armida+Barelli/@40.6378053,14.4149224,13.47z/data=!4m5!3m4!1s0x133b99012d6b0285:0x79254728b44c664d!8m2!3d40.6470276!4d14.4222407?hl=en)
 
 ### <i class="fa fa-plane padding-1-right" aria-hidden="true"></i> In treno o aereo
 
