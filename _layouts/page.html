@@ -26,12 +26,20 @@
 <body>
 
   <header class="top main">
-    <img class="top" src="{{ site.baseurl }}/images/logo/5pani2pesci-2017-white-text-200.png" alt="5pani2pesci">
+    <a class="no-text-decoration" href="{{ site.baseurl }}/">
+      <img class="top" src="{{ site.baseurl }}/images/logo/5pani2pesci-2017-white-text-200.png" alt="5pani2pesci">
+    </a>
     <div id="logout" class="top">
       <i class="fa fa-sign-out" aria-hidden="true"></i>
       <!-- <button id="logout" name="logout">Logout</button> -->
     </div>
   </header>
+
+{% if page.image %}
+  <div class="header-image">
+    <img alt="{{page.title}} {{page.location}}" src="{{site.baseurl}}{{page.image}}" />
+  </div>
+{% endif %}
 
 
   <div id="content">
