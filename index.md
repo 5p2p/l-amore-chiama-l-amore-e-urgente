@@ -105,10 +105,9 @@ Per ulteriori informazioni [mandateci una email](mailto:corsi@5p2p.it).
 
 ## Come e quando arrivare
 
-L'incontro inizia con l'accoglienza alle **ore 13:30** di **venerdì 3 Novembre** (il pranzo è escluso).
-
 **Istituti paritari Filippin**, Via San Giacomo 4,
-31017, Paderno del Grappa (TV)
+31017, Paderno del Grappa (TV). 
+L'incontro inizia con l'accoglienza alle **ore 13:30** di **venerdì 3 Novembre** (il pranzo è escluso).
 
 [Maggiori informazioni su come raggiungerci](come-arrivare).
 
