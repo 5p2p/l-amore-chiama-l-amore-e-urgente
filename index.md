@@ -19,6 +19,7 @@ layout: landing
 </div>
 ## Che cos'è
 
+Un'esperienza vera e intensa per sperimentare il Signore nella tua vita, per entrare pienamente nella tua chiamata alla gioia, per scoprire che le tue ferite e le tue sofferenze sono la tua forza ed incominciare un cammino!
 Vuoi toccare in maniera forte e consistente che cos'è l’amore? Vuoi fare centro nella vita? **Ti servono gli strumenti!** *"L'amore chiama, l'amore è urgente"* è un’esperienza di tre giorni (da venerdì dopo pranzo a domenica pomeriggio) organizzato da [5pani2pesci](http://5p2p.it) per equipaggiarti di tutto l'occorrente.
 
 Per saperne di più, **guarda il video**!
