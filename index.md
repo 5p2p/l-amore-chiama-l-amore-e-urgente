@@ -5,6 +5,8 @@ image: /images/splash/amore-chiama-header.png
 facebook_image: /images/splash/amore-chiama-header.png
 price: 120
 youtube: https://www.youtube.com/embed/M92ctSwuV4o
+mobile: 345-1257661
+orari: da lunedì a venerdì 16.00-21.00
 top-action-button: true
 layout: landing
 ---
@@ -105,10 +107,13 @@ Per ulteriori informazioni [mandateci una email](mailto:corsi@5p2p.it).
 
 L'incontro inizia con l'accoglienza alle **ore 13:30** di **venerdì 3 Novembre** (il pranzo è escluso).
 
-**Istituti paritari Filippin, Via San Giacomo 4,
-31017, Paderno del Grappa (TV)**.
+**Istituti paritari Filippin**, Via San Giacomo 4,
+31017, Paderno del Grappa (TV)
 
 [Maggiori informazioni su come raggiungerci](come-arrivare).
+
+**NON è possibile aggiungersi a corso iniziato** (ad es. venerdì sera, sabato mattina ecc.).
+
 
 </div>
 </div>
@@ -123,9 +128,9 @@ L'incontro inizia con l'accoglienza alle **ore 13:30** di **venerdì 3 Novembre*
 Per iscriverti al corso *"L'amore chiama, l'amore è urgente"* chiama questo numero negli orari indicati
 
 <div class="box light margin-auto" markdown="1">
-Per iscrizioni: &nbsp; &nbsp; **xxx-xxxxxxx** &nbsp;<br>
+Per iscrizioni: &nbsp; &nbsp; {{page.mobile}} &nbsp;<br>
 </div>
-<div class="center small-text">(chiama nelle ore 13-16, e dalle 19 in poi)</div>
+<div class="center small-text">({{page.orari}})</div>
 
 
 </div>

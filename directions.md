@@ -5,6 +5,8 @@ image: /images/splash/amore-chiama-header.png
 top-action-button: true
 layout: landing
 permalink: come-arrivare
+facebook_group: https://www.facebook.com/groups/210294296172980
+google_maps: https://www.google.it/maps/place/La+Salle+International+Campus+-+Istituti+Paritari+Filippin/@45.8285429,11.8578177,17z/data=!3m1!4b1!4m5!3m4!1s0x4778ded1238e67a3:0xac9a500d554c08b7!8m2!3d45.8285392!4d11.8600117?hl=en
 ---
 <div class="light-section  padding-2-bottom">
 <div class="max-width margin-auto padding-2-side" markdown="1">
@@ -16,28 +18,51 @@ permalink: come-arrivare
 
 ## Come e quando arrivare
 
-La maggior parte delle persone provengono dalle parti più diverse di Italia, quindi se arrivi da fuori non preoccuparti! Il corso si terrà presso **Istituti paritari Filippin, Via San Giacomo 4,
-31017, Paderno del Grappa (TV)**. L'incontro inizia con l'accoglienza alle **ore 13:30** di **venerdì 3 Novembre** (il pranzo è escluso).
+La maggior parte delle persone provengono dalle parti più diverse di Italia, quindi se arrivi da fuori non preoccuparti! Il corso si terrà presso **Istituti paritari Filippin**, Via San Giacomo 4,
+31017, Paderno del Grappa (TV) ([Google Maps]({{page.google_maps}})).
 
+L'incontro inizia con l'accoglienza alle **ore 13:30** di **venerdì 3 Novembre** (il pranzo è escluso) e si conclude nel **pomeriggio di domenica 5 Novembre** (anche se sconsigliato, è possibile partire già dal pranzo).
 
-
-
-<div class="important message" markdown="1">
-### <i class="fa fa-map-marker padding-1-right" aria-hidden="true"></i> Per passaggi in auto
-
-Per *dare* o *ricevere* un passaggio in auto iscriviti alla pagina **[Passaggi 5p2p!](https://www.facebook.com/groups/335153533552443/)**
-</div>
+**NON è possibile aggiungersi a corso iniziato** (ad es. venerdì sera, sabato mattina ecc.).
 
 
 ### <i class="fa fa-car padding-1-right" aria-hidden="true"></i> In auto
 
-Ecco le coordinate [Google Maps](https://www.google.it/maps/place/Casa+Di+Spiritualita'+Armida+Barelli/@40.6378053,14.4149224,13.47z/data=!4m5!3m4!1s0x133b99012d6b0285:0x79254728b44c664d!8m2!3d40.6470276!4d14.4222407?hl=en)
+Ecco le coordinate [Google Maps]({{page.google_maps}})
 
-### <i class="fa fa-plane padding-1-right" aria-hidden="true"></i> In treno o aereo
+<div class="important message" markdown="1">
+### <i class="fa fa-map-marker padding-1-right" aria-hidden="true"></i> Per passaggi in auto
 
-_In treno._ Integer condimentum massa non dolor dapibus maximus. Duis iaculis elit nunc, eget malesuada ipsum lacinia lobortis. In hac habitasse platea dictumst. Suspendisse sed venenatis dui, et porttitor ligula. In aliquet, nulla sit amet auctor finibus, massa mi volutpat diam, ut rutrum purus tortor sit amet augue. Duis quis lectus non sapien elementum porttitor pulvinar nec ex. Sed laoreet tincidunt aliquam. Phasellus a dui eleifend, ornare tortor vitae, sollicitudin sem.
+Per *dare* o *ricevere* un passaggio in auto iscriviti alla pagina **[Passaggi 5p2p!]({{page.facebook_group}})**
+</div>
 
-_In aereo._ Integer condimentum massa non dolor dapibus maximus. Duis iaculis elit nunc, eget malesuada ipsum lacinia lobortis. In hac habitasse platea dictumst. Suspendisse sed venenatis dui, et porttitor ligula. In aliquet, nulla sit amet auctor finibus, massa mi volutpat diam, ut rutrum purus tortor sit amet augue. Duis quis lectus non sapien elementum porttitor pulvinar nec ex. Sed laoreet tincidunt aliquam. Phasellus a dui eleifend, ornare tortor vitae, sollicitudin sem.
+### <i class="fa fa-train padding-1-right" aria-hidden="true"></i> In treno
+
+Le stazioni più vicine sono:
+
+- Bassano del Grappa (12km)
+- Castelfranco Veneto (20km)
+- Montebelluna (20km)
+
+Da _Bassano_ prendere la linea 202 dei bus per raggiungere Paderno. Da _Montebelluna_ prendere la linea 111 ([sito bus per orari e dettagli](http://www.mobilitadimarca.it/)).
+
+### <i class="fa fa-plane padding-1-right" aria-hidden="true"></i> In aereo
+
+Gli aereoporti più vicini sono:
+
+- Treviso (Ryanair)
+- Verona (Volotea)
+- Venezia
+
+Da Treviso è possibile raggiungere la stazione di *Montebelluna* prendendo la linea dei bus 102 per Treviso e poi la linea 110 ([sito bus per orari e dettagli](http://www.mobilitadimarca.it/)).
+
+## Attenzione (mezzi consigliati)
+
+La domenica i collegamenti con i bus potrebbero non essere tutti i presenti. Se venite con mezzi pubblici l'opzione più consigliata è quella di venire a Paderno dalla stazione dei treni o aeroporto tramite **NCC**. Prendendolo insieme si ha la possibilità di raggiungere Paderno per pochi euro a persona. Usate pure la [pagina facebook dei passaggi]({{page.facebook_group}}) per creare gruppi di persone che prendono lo stesso NCC.
+
+
+
+
 
 </div>
 </div>
